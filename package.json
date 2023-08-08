@@ -1,0 +1,24 @@
+{
+  "name": "project-reflectowl",
+  "version": "1.0.0",
+  "description": "Simplays is a website that saves you time and money for expenses, invoices, refunds and much more",
+  "main": "index.js",
+  "scripts": {
+    "sass": "node-sass -w scss/ -o dist/css/ --recursive"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/furkanyucel/project-reflectowl.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/furkanyucel/project-reflectowl/issues"
+  },
+  "homepage": "https://github.com/furkanyucel/project-reflectowl#readme",
+  "dependencies": {
+    "@npmcli/fs": "^2.0.1",
+    "node-sass": "^9.0.0"
+  }
+}
