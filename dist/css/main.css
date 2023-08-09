@@ -23,17 +23,16 @@ span {
   line-height: normal;
   letter-spacing: 0.4px; }
 
-.px-140, header, .everything div article, .powerful, .time, .business {
+.px-140, header, .everything div article, .powerful, .time, .business, .covered, footer {
   padding-left: 8.75rem;
   padding-right: 8.75rem; }
 
-.py-260, .business {
+.py-260, .business, .plan {
   padding-top: 16.25rem;
   padding-bottom: 16.25rem; }
 
-.btn-startForFree, .everything div article section a, .business .business-info a {
+.btn-startForFree, .everything div article section a, .business .business-info a, .covered .covered-info a, footer .footer-top a {
   display: inline-flex;
-  margin-top: 2.5rem;
   color: #FFF;
   text-align: right;
   font-family: "Montserrat", sans-serif;
@@ -44,7 +43,7 @@ span {
   border-radius: 100px;
   background: #936EFE; }
 
-.btn-startForFree-hover, .everything div article section a:hover, .business .business-info a:hover {
+.btn-startForFree-hover, .everything div article section a:hover, .business .business-info a:hover, .covered .covered-info a:hover, footer .footer-top a:hover {
   background: #EDF860;
   color: #936EFE;
   outline: 3px dotted #936EFE; }
@@ -235,6 +234,8 @@ header {
         line-height: 36px;
         /* 150% */
         letter-spacing: -0.6px; }
+      .everything div article section a {
+        margin-top: 2.5rem; }
     .everything div article {
       margin-top: 248px;
       display: flex;
@@ -244,6 +245,8 @@ header {
         width: 647px; }
       .everything div article section p {
         width: 540px; }
+      .everything div article section a {
+        margin-top: 2.5rem; }
       .everything div article figure img {
         width: 100%;
         max-width: 714px; }
@@ -364,6 +367,8 @@ header {
     line-height: 36px;
     /* 163.636% */
     letter-spacing: 0.33px; }
+  .business .business-info a {
+    margin-top: 2.5rem; }
   .business .business-cards section {
     padding-top: 2.25rem;
     padding-left: 1.375rem;
@@ -393,3 +398,193 @@ header {
       line-height: 36px;
       /* 163.636% */
       letter-spacing: -0.55px; }
+
+.plan {
+  background: #F2F4F5;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  .plan h2 {
+    margin-bottom: 5rem;
+    width: 708px;
+    color: #000;
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+    font-size: 72px;
+    font-weight: 700;
+    line-height: 86px;
+    /* 119.444% */ }
+  .plan .plans {
+    display: flex;
+    justify-content: center;
+    column-gap: 1.5rem; }
+    .plan .plans .plan-card {
+      width: 384px;
+      padding: 52px 32px;
+      border-radius: 30px;
+      background: #FFF; }
+      .plan .plans .plan-card h4 {
+        color: #000;
+        text-align: left;
+        font-family: "Montserrat", sans-serif;
+        font-size: 24px;
+        font-weight: 500;
+        line-height: 30px;
+        /* 125% */ }
+      .plan .plans .plan-card h6 {
+        margin-top: 12px;
+        width: 228px;
+        color: #000;
+        font-family: "Montserrat", sans-serif;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 16px;
+        /* 133.333% */
+        letter-spacing: 0.3px; }
+        .plan .plans .plan-card h6:last-of-type {
+          margin-top: 48px; }
+      .plan .plans .plan-card h3 {
+        margin-top: -0.5rem;
+        color: #000;
+        font-family: "Montserrat", sans-serif;
+        font-size: 61px;
+        font-weight: 700;
+        line-height: normal;
+        letter-spacing: -1.525px; }
+      .plan .plans .plan-card h5 {
+        margin-top: 0.5rem;
+        margin-bottom: 2rem;
+        color: #000;
+        font-family: "Montserrat", sans-serif;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: normal;
+        letter-spacing: -0.35px; }
+      .plan .plans .plan-card .plan-card__info p:before {
+        margin-right: .75rem;
+        content: "\f058";
+        font-family: FontAwesome;
+        color: #A3DC2F; }
+      .plan .plans .plan-card .plan-card__info p {
+        margin-top: 1rem;
+        color: #000;
+        font-family: "Montserrat", sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 56px;
+        /* 350% */
+        letter-spacing: 0.4px; }
+      .plan .plans .plan-card .btn-plan a {
+        margin-top: 3.25rem;
+        display: inline-flex;
+        color: #000;
+        font-family: "Montserrat", sans-serif;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 20px;
+        /* 125% */
+        letter-spacing: 0.4px;
+        padding: 20px 140px;
+        border-radius: 100px;
+        border: 1px solid #000;
+        background: none; }
+        .plan .plans .plan-card .btn-plan a:hover {
+          border: transparent;
+          color: #936EFE;
+          background: #EDF860; }
+      .plan .plans .plan-card:hover {
+        transform: translateY(-24px);
+        background: #936EFE; }
+        .plan .plans .plan-card:hover h2, .plan .plans .plan-card:hover h3, .plan .plans .plan-card:hover h4, .plan .plans .plan-card:hover h5, .plan .plans .plan-card:hover h6, .plan .plans .plan-card:hover p {
+          color: #FFF; }
+        .plan .plans .plan-card:hover a {
+          border: transparent;
+          background: #fff; }
+          .plan .plans .plan-card:hover a:hover {
+            border: #FFF; }
+
+.covered {
+  padding-bottom: 12.5rem;
+  background: #F2F4F5;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; }
+  .covered .covered-info h2 {
+    width: 35.3125rem;
+    color: #000;
+    font-family: "Montserrat", sans-serif;
+    font-size: 72px;
+    font-weight: 700;
+    line-height: 86px;
+    /* 119.444% */ }
+  .covered .covered-info p {
+    width: 40rem;
+    margin-top: 1.125rem;
+    margin-bottom: 3.5rem;
+    color: #000;
+    font-family: "Montserrat", sans-serif;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 36px;
+    /* 163.636% */
+    letter-spacing: 0.33px; }
+  .covered .covered-info a {
+    margin-top: 2.5rem; }
+  .covered .accordion {
+    margin-left: 48px;
+    width: 842px; }
+    .covered .accordion .accordion-item {
+      margin-bottom: 1.625rem;
+      border-radius: 16px;
+      background: #FFF; }
+      .covered .accordion .accordion-item .accordion-header {
+        cursor: pointer;
+        padding: 8px 16px;
+        height: 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #ffffff;
+        border-radius: 16px;
+        color: #222;
+        font-family: "Montserrat", sans-serif;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: normal; }
+        .covered .accordion .accordion-item .accordion-header:hover {
+          color: #936EFE;
+          background-color: #EDF860; }
+      .covered .accordion .accordion-item .accordion-content {
+        display: none;
+        padding: 10px;
+        border-top: 1px solid #ccc; }
+      .covered .accordion .accordion-item.active .accordion-content {
+        display: block;
+        animation: slideDown 0.3s ease-in-out; }
+    .covered .accordion .accordion-toggle {
+      margin-right: 10px;
+      font-weight: bold; }
+
+@keyframes slideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px); }
+  100% {
+    opacity: 1;
+    transform: translateY(0); } }
+
+footer {
+  padding-top: 140px; }
+  footer .footer-top h5 {
+    margin-top: 2.25rem;
+    width: 16.25rem;
+    color: #E4E4E4;
+    font-family: "Montserrat", sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 28px;
+    /* 140% */
+    letter-spacing: 0.5px; }
+  footer .footer-top a {
+    margin-top: .75rem;
+    background: #fff; }

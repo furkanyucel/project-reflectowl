@@ -46,7 +46,6 @@ span {
 
 .btn-startForFree {
   display: inline-flex;
-  margin-top: 2.5rem;
   color: #FFF;
   text-align: right;
   font-family: $font-family;
@@ -80,7 +79,7 @@ header {
   @extend .px-140;
   background-color: #000;
 
-  .logo {}
+  // .logo {}
 
   nav {
     ul {
@@ -353,6 +352,7 @@ header {
         }
   
         a {
+          margin-top: 2.5rem;
           @extend .btn-startForFree;
     
           &:hover {
@@ -379,6 +379,7 @@ header {
         }
   
         a {
+          margin-top: 2.5rem;
           @extend .btn-startForFree;
     
           &:hover {
@@ -565,6 +566,7 @@ header {
     }
 
     a {
+      margin-top: 2.5rem;
       @extend .btn-startForFree;
 
       &:hover {
@@ -618,3 +620,291 @@ header {
   }
 }
 // Business End
+
+// Plans Start
+.plan {
+  @extend .py-260;
+  background: #F2F4F5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h2 {
+    margin-bottom: 5rem;
+    width: 708px;
+    color: #000;
+    text-align: center;
+    font-family: $font-family;
+    font-size: 72px;
+    font-weight: 700;
+    line-height: 86px; /* 119.444% */
+  }
+
+  .plans {
+    display: flex;
+    justify-content: center;
+    column-gap: 1.5rem;
+
+    .plan-card {
+      width: 384px;
+      padding: 52px 32px;
+      border-radius: 30px;
+      background: #FFF;
+
+      h4 {
+        color: #000;
+        text-align: left;
+        font-family: $font-family;
+        font-size: 24px;
+        font-weight: 500;
+        line-height: 30px; /* 125% */
+      }
+
+      h6 {
+        margin-top: 12px;
+        width: 228px;
+        color: #000;
+        font-family: $font-family;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 16px; /* 133.333% */
+        letter-spacing: 0.3px;
+
+        &:last-of-type {
+          margin-top: 48px;
+        }
+      }
+
+      h3 {
+        margin-top: -0.5rem;
+        color: #000;
+        font-family: $font-family;
+        font-size: 61px;
+        font-weight: 700;
+        line-height: normal;
+        letter-spacing: -1.525px;
+      }
+
+      h5 {
+        margin-top: 0.5rem;
+        margin-bottom: 2rem;
+        color: #000;
+        font-family: $font-family;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: normal;
+        letter-spacing: -0.35px;
+      }
+
+      .plan-card__info {
+
+        p:before {
+          margin-right: .75rem;
+          content: "\f058";
+          font-family: FontAwesome;
+          color: #A3DC2F;
+        }
+
+        p {
+          margin-top: 1rem;
+          color: #000;
+          font-family: $font-family;
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 56px; /* 350% */
+          letter-spacing: 0.4px;        
+
+        }
+      }
+
+      .btn-plan {
+
+        a {
+          margin-top: 3.25rem;
+          display: inline-flex;
+          color: #000;
+          font-family: $font-family;
+          font-size: 16px;
+          font-weight: 700;
+          line-height: 20px; /* 125% */
+          letter-spacing: 0.4px;
+          padding: 20px 140px;
+          border-radius: 100px;
+          border: 1px solid #000;
+          background: none;
+    
+          &:hover {
+            border: transparent;
+            color: #936EFE;
+            background: #EDF860;
+          }
+        }
+      }
+
+      &:hover {
+        transform: translateY(-24px);
+        background: #936EFE;
+
+        h2, h3, h4, h5, h6, p {
+          color: #FFF;
+        }   
+          a {
+            border: transparent;
+            background: #fff;
+
+            &:hover {
+              border: #FFF;
+            }
+          }
+
+      }
+    }
+  }
+}
+// Plans End
+
+// Covered Start
+.covered {
+  padding-bottom: 12.5rem;
+  @extend .px-140;
+  background: #F2F4F5;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  .covered-info {
+    h2 {
+      width: 35.3125rem;
+      color: #000;
+      font-family: $font-family;
+      font-size: 72px;
+      font-weight: 700;
+      line-height: 86px; /* 119.444% */
+    }
+  
+    p {
+      width: 40rem;
+      margin-top: 1.125rem;
+      margin-bottom: 3.5rem;
+      color: #000;
+      font-family: $font-family;
+      font-size: 22px;
+      font-weight: 400;
+      line-height: 36px; /* 163.636% */
+      letter-spacing: 0.33px;
+    }
+  
+    a {
+      margin-top: 2.5rem;
+      @extend .btn-startForFree;
+  
+      &:hover {
+        @extend .btn-startForFree-hover;
+      }
+    }
+  }
+
+  $accordion-header-height: 40px; // Başlık yüksekliği
+$accordion-transition: 0.3s;     // Geçiş süresi
+
+.accordion {
+  margin-left: 48px;
+  // width: 100%;
+  width: 842px;
+
+  .accordion-item {
+    margin-bottom: 1.625rem;
+    border-radius: 16px;
+    background: #FFF;
+    // border: 1px solid #ccc;
+    
+    .accordion-header {
+      cursor: pointer;
+      padding: 8px 16px;
+      height: $accordion-header-height;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #ffffff;
+      border-radius: 16px;
+      color: #222;
+      font-family: $font-family;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: normal;
+      
+      &:hover {
+        color: #936EFE;
+        background-color: #EDF860;
+      }
+    }
+    
+    .accordion-content {
+      display: none;
+      padding: 10px;
+      border-top: 1px solid #ccc;
+    }
+    
+    &.active {
+      .accordion-content {
+        display: block;
+        animation: slideDown $accordion-transition ease-in-out;
+      }
+    }
+  }
+
+  .accordion-toggle {
+    margin-right: 10px;
+    font-weight: bold;
+  }
+  
+}
+
+@keyframes slideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+}
+// Covered End
+
+// Footer Start
+footer {
+  @extend .px-140;
+  padding-top: 140px;
+  .footer-top {
+    figure {
+      img {}
+    }
+
+    h5 {
+      margin-top: 2.25rem;
+      width: 16.25rem;
+      color: #E4E4E4;
+      font-family: $font-family;
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 28px; /* 140% */
+      letter-spacing: 0.5px;
+    }
+
+    a {
+      margin-top: .75rem;
+      @extend .btn-startForFree;
+      background: #fff;
+
+      &:hover {
+        @extend .btn-startForFree-hover;
+      }
+    }
+  }
+}
+// Footer End
