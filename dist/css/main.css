@@ -11,6 +11,10 @@
 a {
   text-decoration: none; }
 
+ul,
+li {
+  list-style-type: none; }
+
 span {
   color: #936EFE; }
 
@@ -31,7 +35,7 @@ span {
   padding-top: 16.25rem;
   padding-bottom: 16.25rem; }
 
-.btn-startForFree, .everything div article section a, .business .business-info a, .covered .covered-info a, footer .footer-top a {
+.btn-startForFree, .everything div article section a, .business .business-info a, .covered .covered-info a, footer .footer-top section a {
   display: inline-flex;
   color: #FFF;
   text-align: right;
@@ -43,10 +47,19 @@ span {
   border-radius: 100px;
   background: #936EFE; }
 
-.btn-startForFree-hover, .everything div article section a:hover, .business .business-info a:hover, .covered .covered-info a:hover, footer .footer-top a:hover {
+.btn-startForFree-hover, .everything div article section a:hover, .business .business-info a:hover, .covered .covered-info a:hover, footer .footer-top section a:hover {
   background: #EDF860;
   color: #936EFE;
   outline: 3px dotted #936EFE; }
+
+.simpleText {
+  color: #FFF;
+  font-family: "Montserrat", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 25px;
+  /* 138.889% */
+  letter-spacing: 0.45px; }
 
 header {
   height: 98px;
@@ -574,17 +587,78 @@ header {
     transform: translateY(0); } }
 
 footer {
-  padding-top: 140px; }
-  footer .footer-top h5 {
-    margin-top: 2.25rem;
-    width: 16.25rem;
-    color: #E4E4E4;
-    font-family: "Montserrat", sans-serif;
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 28px;
-    /* 140% */
-    letter-spacing: 0.5px; }
-  footer .footer-top a {
-    margin-top: .75rem;
-    background: #fff; }
+  padding-top: 140px;
+  background: #936EFE; }
+  footer .footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; }
+    footer .footer-top section figure {
+      width: 100%; }
+    footer .footer-top section h5 {
+      margin-top: 2.25rem;
+      width: 16.25rem;
+      color: #E4E4E4;
+      font-family: "Montserrat", sans-serif;
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 28px;
+      /* 140% */
+      letter-spacing: 0.5px; }
+    footer .footer-top section a {
+      margin-top: .75rem;
+      color: #000;
+      background: #fff; }
+    footer .footer-top .footer-nav {
+      width: 776px;
+      display: flex;
+      justify-content: space-between; }
+      footer .footer-top .footer-nav .footer-nav-section h3 {
+        color: #FFF;
+        font-family: "Montserrat", sans-serif;
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 36px;
+        /* 150% */ }
+      footer .footer-top .footer-nav .footer-nav-section ul li a {
+        color: #FFF;
+        font-family: "Montserrat", sans-serif;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 62px;
+        /* 344.444% */
+        letter-spacing: 0.45px; }
+    footer .footer-top .footer-business ul {
+      color: #FFF;
+      font-family: "Montserrat", sans-serif;
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 36px;
+      /* 150% */ }
+      footer .footer-top .footer-business ul li {
+        color: #FFF;
+        font-family: "Montserrat", sans-serif;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 25px;
+        /* 138.889% */
+        letter-spacing: 0.45px; }
+        footer .footer-top .footer-business ul li a {
+          display: none;
+          color: #EDF860;
+          font-family: "Montserrat", sans-serif;
+          font-size: 18px;
+          font-weight: 400;
+          line-height: 25px;
+          letter-spacing: 0.45px;
+          text-decoration-line: underline;
+          border: none;
+          background: transparent; }
+        footer .footer-top .footer-business ul li p {
+          margin-top: 3.75rem;
+          color: #FFF;
+          font-family: "Montserrat", sans-serif;
+          font-size: 24px;
+          font-weight: 400;
+          line-height: 36px;
+          /* 150% */ }
