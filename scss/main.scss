@@ -2,8 +2,6 @@
 
 $font-family: 'Montserrat', sans-serif;
 
-@import 'footer.scss';
-
 
 * {
   margin: 0;
@@ -32,17 +30,32 @@ span {
   color: #936EFE;
 }
 
-// Extend Start
-.nav-text {
-  color: #FFF;
-  text-align: right;
+
+//Mixin
+@mixin custom-style($color, $font-size, $font-weight, $line-height, $letter-spacing) {
+  color: $color;
+  font-size: $font-size;
+  font-weight: $font-weight;
+  line-height: $line-height;
+  letter-spacing: $letter-spacing;
   font-family: $font-family;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: normal;
-  letter-spacing: 0.4px;
 }
 
+@mixin btn-style($color, $bgcolor, $py, $px, $radius) {
+  color: $color;
+  background: $bgcolor;
+  padding: $py $px;
+  border-radius: $radius;
+}
+
+@mixin flex-style($display, $flex-direction, $justify-content, $align-items) {
+display: $display;
+flex-direction: $flex-direction;
+justify-content: $justify-content;
+align-items: $align-items;
+}
+
+// Extends
 .px-140 {
   padding-left: 8.75rem;
   padding-right: 8.75rem;
@@ -53,50 +66,34 @@ span {
   padding-bottom: 16.25rem;
 }
 
-.btn-startForFree {
-  display: inline-flex;
-  color: #FFF;
-  text-align: right;
-  font-family: $font-family;
-  font-size: 18px;
-  font-weight: 700;
-  line-height: normal;
-  padding: 19px 36px;
-  border-radius: 100px;
-  background: #936EFE;
+.my-130 {
+  margin-top: 130px;
+  margin-bottom: 130px;
 }
 
-.btn-startForFree-hover {
-  background: #EDF860;
-  color: #936EFE;
-  outline: 3px dotted #936EFE;
-}
+// Extend Start
+// .nav-text {
+//   color: #FFF;
+//   text-align: right;
+//   font-family: $font-family;
+//   font-size: 16px;
+//   font-weight: 400;
+//   line-height: normal;
+//   letter-spacing: 0.4px;
+// }
 
 
-.simpleText {
-  color: #FFF;
-  font-family: $font-family;
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 25px; /* 138.889% */
-  letter-spacing: 0.45px;
-}
-// Extend End
+
+
 
 
 // Header Start
 header {
-  // width: 100%;
-  // max-width: 1920px;
-  height: 98px;
   margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  // padding-left: 140px;
-  // padding-right: 140px;
-  @extend .px-140;
+  height: 98px;
   background-color: #000;
+  @include flex-style(flex, row, space-between, center);
+  @extend .px-140;
 
   // .logo {}
 
@@ -109,8 +106,8 @@ header {
         margin-right: 20px;
 
         a {
-          @extend .nav-text;
-
+          @include custom-style(#FFF, 16px, 400, 0, 0.4px);
+          text-align: right;
         }
         :hover {
           color: #EDF860;
@@ -122,7 +119,7 @@ header {
   .login-signup {
 
     a {
-      @extend .nav-text;
+      @include custom-style(#FFF, 16px, 400, 0, 0.4px);
       margin-left: 10px;
     }
 
@@ -132,67 +129,47 @@ header {
 
     a:last-child {
       margin-left: 2.7rem;
-      padding: 19px 51px;
-      border-radius: 100px;
-      background: #936EFE;
+      @include btn-style(auto, #936EFE, 19px, 51px, 100px);
       font-size: 18px;
       font-weight: 700;
     }
 
     :hover:last-child {
-      background: #EDF860;
-      color: #936EFE;
-      color: #000;
+      @include btn-style(#936EFE, #EDF860, 19px, 51px, 100px);
     }
   }
-
 
 }
 // Header End
 
+
+
 // Hero Start
 .hero {
-  margin-top: 130px;
-  margin-bottom: 130px;
-  display: flex;
-  justify-content: center;
+  @extend .my-130;
+  @include flex-style(flex, auto, center, auto);
 
   .hero-left {
-    display: flex;
-    flex-direction: column;
+    @include flex-style(flex, column, auto, auto);
 
     section {
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
+      @include flex-style(flex, auto, flex-start, flex-end);
 
       i {
         margin-right: 1rem;
-        color: #EDF860;
-        padding: 21px;
-        border-radius: 100px;
-        background: #936EFE;
+        @include btn-style(#EDF860, #936EFE, 21px, 21px, 100px);
       }
 
       article {
         div {
           p {
-            color: #000;
-            font-family: $font-family;
-            font-size: 24px;
-            font-weight: 500;
-            line-height: 30px; /* 125% */
+            @include custom-style(#000, 24px, 500, 30px, auto);
           }
         }
 
         div {
           h5 {
-            color: #000;
-            font-family: $font-family;
-            font-size: 14px;
-            font-style: normal;
-            font-weight: 400;
-            line-height: 24px; /* 171.429% */
+            @include custom-style(#000, 14px, 400, 24px, auto);
 
             u {
               text-decoration-line: underline;
@@ -208,11 +185,7 @@ header {
       max-width: 844px;
       
       h1 {
-        color: #000;
-        font-family: $font-family;
-        font-size: 100px;
-        font-weight: 700;
-        line-height: 110px; /* 110% */
+        @include custom-style(#000, 100px, 700, 110px, auto);
       }
     }
 
@@ -222,11 +195,7 @@ header {
       p {
         width: 100%;
         max-width: 650px;
-        color: #000;
-        font-family: $font-family;
-        font-size: 22px;
-        font-weight: 400;
-        line-height: 36px; /* 163.636% */
+        @include custom-style(#000, 22px, 400, 36px, auto);
       }
     }
 
@@ -235,15 +204,11 @@ header {
         width: 100%;
         max-width: 24rem;
         height: 5rem;
-        border-radius: 40px;
-        background: #F5F5F5;
+        @include btn-style(auto, #F5F5F5, auto, auto, 40px);
         border: none;
-        color: #717171;
-        font-family: $font-family;
-        font-size: 20px;
-        font-weight: 400;
-        line-height: 36px; /* 180% */
+        @include custom-style(#000, 20px, 400, 36px, auto);
         text-indent: 40px;
+        opacity: 0.6225;
       }
         input:focus {
           background: #EDF860;
@@ -255,13 +220,8 @@ header {
         width: 216px;
         height: 80px;
         margin-left: .75rem;
-        color: #FFF;
-        font-family: $font-family;
-        font-size: 20px;
-        font-weight: 500;
-        line-height: 36px; /* 180% */
-        border-radius: 40px;
-        background: #936EFE;
+        @include custom-style(#FFF, 20px, 500, 36px, auto);
+        @include btn-style(auto, #936EFE, auto, auto, 40px);
         border: none;
       }
         button:hover {
@@ -271,23 +231,18 @@ header {
     }
 
     section {
+      margin-top: 88px;
+      
       article {
         margin-right: 3.75rem;
 
         h2 {
-          color: #000;
-          font-family: $font-family;
-          font-size: 56px;
-          font-weight: 500;
-          line-height: normal;
+          @include custom-style(#000, 56px, 500, 0, auto);
         }
 
         p {
-          color: #B1B1B1;
-          font-family: $font-family;
-          font-size: 22px;
-          font-weight: 400;
-          line-height: normal;
+          margin-top: 3rem;
+          @include custom-style(#B1B1B1, 22px, 400, 0, auto);
         }
       }
     }
@@ -304,6 +259,7 @@ header {
 }
 // Hero End
 
+
 // Everything Start
 .everything {
   background: #F2F4F5;
@@ -317,26 +273,23 @@ header {
   flex-direction: column;
 
   h2 {
-    color: #000;
     text-align: center;
-    font-family: $font-family;
-    font-size: 72px;
-    font-weight: 700;
-    line-height: 91px; /* 126.389% */
-    letter-spacing: -1.8px;
+    @include custom-style(#000, 72px, 700, 91px, -1.8px);
   }
 
   div {
     margin-top: 292px;
     // @extend .px-140;
 
-    article {    @extend .px-140;
+    article {
+      @extend .px-140;
       display: flex;
       align-items: center;
       justify-content: center;
       // padding-right: 2rem;
       column-gap: 8rem;
       row-gap: 16rem;
+      margin-bottom: 248px;
   
       figure {
         // padding-left: 2rem;
@@ -350,43 +303,35 @@ header {
   
         h2 {
           width: 845px;
-          color: #000;
-          font-family: $font-family;
-          font-size: 72px;
-          font-weight: 700;
-          line-height: 86px; /* 119.444% */
-          letter-spacing: -1.8px;
           text-align: left;
+          @include custom-style(#000, 72px, 700, 86px, -1.8px);
         }
   
         p {
           width: 730px;
           margin-top: 1.75rem;
-          color: #000;
-          font-family: $font-family;
-          font-size: 24px;
-          font-weight: 400;
-          line-height: 36px; /* 150% */
-          letter-spacing: -0.6px;
+          @include custom-style(#000, 24px, 400, 36px, -0.6px);
         }
   
         a {
           margin-top: 2.5rem;
-          @extend .btn-startForFree;
+          text-align: right;
+          @include custom-style(#fff, 18px, 700, auto, auto);
+          @include btn-style(#fff, #936EFE, 19px, 36px, 100px);
     
           &:hover {
-            @extend .btn-startForFree-hover;
+            @include btn-style(#936EFE, #EDF860, 19px, 36px, 100px);
+           outline: 3px dotted #936EFE;
           }
         }
       }
     }
   
     article {
-      margin-top: 248px;
+      // margin-top: 248px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      // background: green;
   
       section {
         h2 {
@@ -398,17 +343,19 @@ header {
         }
   
         a {
+          display: inline-flex;
           margin-top: 2.5rem;
-          @extend .btn-startForFree;
+          @include custom-style(#fff, 18px, 700, auto, auto);
     
           &:hover {
-            @extend .btn-startForFree-hover;
+            background: #EDF860;
+            color: #936EFE;
+            outline: 3px dotted #936EFE;
           }
         }
       }
   
       figure {
-        // background: blue;
   
         img {
           width: 100%;
@@ -421,28 +368,24 @@ header {
 }
 // Everything End
 
+
+
+
+
 // Powerful Start
 .powerful {
   padding-top: 16.25rem;
   padding-bottom: 16.25rem;
-  // padding-left: 140px;
-  // padding-right: 140px;
   @extend .px-140;
 
   h2 {
-    color: #000;
     text-align: center;
-    font-family: $font-family;
-    font-size: 72px;
-    font-weight: 700;
-    line-height: 91px; /* 126.389% */
-    letter-spacing: -1.8px;
+    @include custom-style(#000, 72px, 700, 91px, -1.8px);
   }
 
   .powerful-box {
     margin-top: 5rem;
-    display: flex;
-    justify-content: center;
+    @include flex-style(flex, auto, center, auto);
     column-gap: 24px;
 
     section {
@@ -453,34 +396,19 @@ header {
       padding-top: 4.25rem;
       padding-left: 2rem;
 
-      h4 {
-        color: #000;
-        font-family: $font-family;
-        font-size: 44px;
-        font-weight: 500;
-        line-height: normal;
-        letter-spacing: -1.1px;
+      h4 {margin-top: 13px;
+        @include custom-style(#000, 44px, 500, 0, -1.1px);
       }
 
       h5 {
-        margin-top: 12px;
-        color: #000;
-        font-family: $font-family;
-        font-size: 24px;
-        font-weight: 500;
-        line-height: normal;
-        letter-spacing: -0.6px;
+        margin-top: 57px;
+       @include custom-style(#000, 24px, 500, 0, -0.6px);
       }
 
       p {
-        margin-top: 16px;
+        margin-top: 32px;
         width: 248px;
-        color: #000;
-        font-family: $font-family;
-        font-size: 18px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 24px; /* 133.333% */
+        @include custom-style(#000, 18px, 400, 24px, 0);
       }
       
       &:hover {
@@ -495,45 +423,37 @@ header {
 }
 // Powerful End
 
+
+
+
 // Time Start
 .time {
   margin: 0 auto;
-  // width: 100%;
   max-width: 1920px;
   padding-top: 16.25rem;
   padding-bottom: 17.25rem;
-  // padding-left: 140px;
-  // padding-right: 140px;
   @extend .px-140;
   background: #100D10;
 
   h2 {
-    width: 712px;
-    color: #FFF;
-    font-family: $font-family;
-    font-size: 72px;
-    font-weight: 700;
-    line-height: 86px; /* 119.444% */
-    letter-spacing: -1.8px;
+    width: 880px;
+    @include custom-style(#FFF, 72px, 700, 86px, -1.8px);
+  }
+
+  h2:last-of-type {
+    width: 895px;
   }
 
   p {
     width: 730px;
     margin-top: 2rem;
-    color: #FFF;
-    font-family: $font-family;
-    font-size: 22px;
-    font-weight: 400;
-    line-height: 36px; /* 163.636% */
-    letter-spacing: 0.33px;
+    @include custom-style(#FFF, 22px, 400, 36px, 0.33px);
   }
 
   .time-photos {
     margin-top: 80px;
     margin-bottom: 16.25rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+    @include flex-style(flex, auto, space-between, flex-start);
     column-gap: 28px;
 
     figure {
@@ -553,43 +473,35 @@ header {
 }
 // Time End
 
+
 // Business Start
 .business {
-  @extend .py-260;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  // column-gap: 132px;
   @extend .px-140;
+  @extend .py-260;
+  @include flex-style(flex, auto, space-between, center);
+  // column-gap: 132px;
 
   .business-info {
     h2 {
-      width: 600px;
-      color: #000;
-      font-family: $font-family;
-      font-size: 72px;
-      font-weight: 700;
-      line-height: 86px; /* 119.444% */
-      letter-spacing: -1.8px;
+      @include custom-style(#000, 72px, 700, 86px, -1.8px);
     }
     
     p {
       margin-top: 18px;
       width: 630px;
-      color: #000;
-      font-family: $font-family;
-      font-size: 22px;
-      font-weight: 400;
-      line-height: 36px; /* 163.636% */
-      letter-spacing: 0.33px;
+      @include custom-style(#000, 22px, 400, 36px, 0.33px);
     }
 
     a {
+      display: inline-flex;
       margin-top: 2.5rem;
-      @extend .btn-startForFree;
+      @include custom-style(#fff, 18px, 700, auto, auto);
+      @include btn-style(#fff, #936EFE, 19px, 51px, 100px);
+      text-align: right;
 
       &:hover {
-        @extend .btn-startForFree-hover;
+        @include btn-style(#936EFE, #EDF860, 19px, 51px, 100px);
+        outline: 3px dotted #936EFE;
       }
     }
   }
@@ -640,54 +552,38 @@ header {
 }
 // Business End
 
+
+
 // Plans Start
 .plan {
   @extend .py-260;
   background: #F2F4F5;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+	@include flex-style(flex, column, auto, center);
 
   h2 {
+    text-align: center;
     margin-bottom: 5rem;
     width: 708px;
-    color: #000;
-    text-align: center;
-    font-family: $font-family;
-    font-size: 72px;
-    font-weight: 700;
-    line-height: 86px; /* 119.444% */
+		@include custom-style(#000, 72px, 700, 86px, auto);
   }
 
   .plans {
-    display: flex;
-    justify-content: center;
+		@include flex-style(flex, auto, center, auto);
     column-gap: 1.5rem;
 
     .plan-card {
       width: 384px;
-      padding: 52px 32px;
-      border-radius: 30px;
-      background: #FFF;
+			@include btn-style(auto, #FFF, 52px, 32px, 30px);
 
       h4 {
-        color: #000;
+				@include custom-style(#000, 24px, 500, 30px, auto);
         text-align: left;
-        font-family: $font-family;
-        font-size: 24px;
-        font-weight: 500;
-        line-height: 30px; /* 125% */
       }
 
       h6 {
         margin-top: 12px;
         width: 228px;
-        color: #000;
-        font-family: $font-family;
-        font-size: 12px;
-        font-weight: 400;
-        line-height: 16px; /* 133.333% */
-        letter-spacing: 0.3px;
+				@include custom-style(#000, 12px, 400, 16px, 0.3px);
 
         &:last-of-type {
           margin-top: 48px;
@@ -695,24 +591,14 @@ header {
       }
 
       h3 {
+				@include custom-style(#000, 61px, 700, auto, -1.525px);
         margin-top: -0.5rem;
-        color: #000;
-        font-family: $font-family;
-        font-size: 61px;
-        font-weight: 700;
-        line-height: normal;
-        letter-spacing: -1.525px;
       }
 
       h5 {
+				@include custom-style(#000, 14px, 400, auto, -0.35px);
         margin-top: 0.5rem;
         margin-bottom: 2rem;
-        color: #000;
-        font-family: $font-family;
-        font-size: 14px;
-        font-weight: 400;
-        line-height: normal;
-        letter-spacing: -0.35px;
       }
 
       .plan-card__info {
@@ -726,13 +612,7 @@ header {
 
         p {
           margin-top: 1rem;
-          color: #000;
-          font-family: $font-family;
-          font-size: 16px;
-          font-weight: 400;
-          line-height: 56px; /* 350% */
-          letter-spacing: 0.4px;        
-
+					@include custom-style(#000, 16px, 400, 56px, 0.4px);    
         }
       }
 
@@ -741,14 +621,9 @@ header {
         a {
           margin-top: 3.25rem;
           display: inline-flex;
-          color: #000;
-          font-family: $font-family;
-          font-size: 16px;
-          font-weight: 700;
+					@include btn-style(#000, #936EFE, 20px, 140px, 100px);
+					@include custom-style(auto, 16px, 700, 20px, 0.4px)
           line-height: 20px; /* 125% */
-          letter-spacing: 0.4px;
-          padding: 20px 140px;
-          border-radius: 100px;
           border: 1px solid #000;
           background: none;
     
@@ -781,285 +656,3 @@ header {
   }
 }
 // Plans End
-
-// Covered Start
-.covered {
-  padding-bottom: 12.5rem;
-  @extend .px-140;
-  background: #F2F4F5;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-
-  .covered-info {
-    h2 {
-      width: 35.3125rem;
-      color: #000;
-      font-family: $font-family;
-      font-size: 72px;
-      font-weight: 700;
-      line-height: 86px; /* 119.444% */
-    }
-  
-    p {
-      width: 40rem;
-      margin-top: 1.125rem;
-      margin-bottom: 3.5rem;
-      color: #000;
-      font-family: $font-family;
-      font-size: 22px;
-      font-weight: 400;
-      line-height: 36px; /* 163.636% */
-      letter-spacing: 0.33px;
-    }
-  
-    a {
-      margin-top: 2.5rem;
-      @extend .btn-startForFree;
-  
-      &:hover {
-        @extend .btn-startForFree-hover;
-      }
-    }
-  }
-
-  $accordion-header-height: 40px; // Başlık yüksekliği
-$accordion-transition: 0.3s;     // Geçiş süresi
-
-.accordion {
-  margin-left: 48px;
-  // width: 100%;
-  width: 842px;
-
-  .accordion-item {
-    margin-bottom: 1.625rem;
-    border-radius: 16px;
-    background: #FFF;
-    // border: 1px solid #ccc;
-    
-    .accordion-header {
-      cursor: pointer;
-      padding: 8px 16px;
-      height: $accordion-header-height;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background-color: #ffffff;
-      border-radius: 16px;
-      color: #222;
-      font-family: $font-family;
-      font-size: 16px;
-      font-weight: 500;
-      line-height: normal;
-      
-      &:hover {
-        color: #936EFE;
-        background-color: #EDF860;
-      }
-    }
-    
-    .accordion-content {
-      display: none;
-      padding: 10px;
-      border-top: 1px solid #ccc;
-    }
-    
-    &.active {
-      .accordion-content {
-        display: block;
-        animation: slideDown $accordion-transition ease-in-out;
-      }
-    }
-  }
-
-  .accordion-toggle {
-    margin-right: 10px;
-    font-weight: bold;
-  }
-  
-}
-
-@keyframes slideDown {
-  0% {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-
-
-}
-// Covered End
-
-
-
-// Footer Start
-footer {
-  display: flex;
-  flex-direction: column;
-  @extend .px-140;
-  padding-top: 140px;
-  background: #936EFE;
-  
-  .footer-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-
-    .footer-basic {
-      figure {
-        width: 100%;
-        // img {}
-      }
-  
-      h5 {
-        margin-top: 2.25rem;
-        width: 16.25rem;
-        color: #E4E4E4;
-        font-family: $font-family;
-        font-size: 20px;
-        font-weight: 400;
-        line-height: 28px; /* 140% */
-        letter-spacing: 0.5px;
-      }
-  
-      a {
-        margin-top: .75rem;
-        // @extend .btn-startForFree;
-        color: #fff;
-        background: none;
-  
-        &:hover {
-          // @extend .btn-startForFree-hover;
-        }
-      }
-    }
-
-    .footer-table {
-      $border-color: #000;
-$background-color: #f2f2f2;
-$line-height: 64px; // Yazı yüksekliği ayarı
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-  border: 1px solid $border-color;
-
-  th, td {
-    border: 1px solid $border-color;
-    padding: 8px;
-    text-align: left;
-    line-height: $line-height; // Yazı yüksekliği ayarı
-  }
-
-  th {
-    background-color: $background-color;
-  }
-}
-
-.footer-nav-section {
-  h3 {
-    font-size: 1.2em;
-  }
-
-  ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    line-height: $line-height; // Yazı yüksekliği ayarı
-
-    li {
-      margin-bottom: 5px;
-
-      a {
-        text-decoration: none;
-        color: #000;
-        line-height: $line-height; // Yazı yüksekliği ayarı
-
-        &:hover {
-          text-decoration: underline;
-        }
-      }
-    }
-  }
-}
-
-    }
-
-    // .footer-business {
-
-    //   h3 {
-    //     color: #FFF;
-    //     font-family: $font-family;
-    //     font-size: 24px;
-    //     font-weight: 700;
-    //     line-height: 36px; /* 150% */
-    //   }
-
-    //   ul {
-    //     color: #FFF;
-    //     font-family: $font-family;
-    //     font-size: 24px;
-    //     font-weight: 700;
-    //     line-height: 36px; /* 150% */
-
-    //     li {
-    //       color: #FFF;
-    //       font-family: $font-family;
-    //       font-size: 18px;
-    //       font-weight: 400;
-    //       line-height: 25px; /* 138.889% */
-    //       letter-spacing: 0.45px;
-
-    //       a {
-    //         color: #EDF860;
-    //         font-family: $font-family;
-    //         font-size: 18px;
-    //         font-weight: 400;
-    //         line-height: 25px;
-    //         letter-spacing: 0.45px;
-    //         text-decoration-line: underline;
-
-    //         border: none;
-    //         background: transparent;
-    //       }
-
-    //       p {
-    //         color: #EDF860;
-    //         font-family: $font-family;
-    //         font-size: 18px;
-    //         font-weight: 400;
-    //         line-height: 25px;
-    //         letter-spacing: 0.45px;
-    //         text-decoration-line: underline;
-    //       }
-    //     }
-        
-    //   }
-    // }
-  }
-
-  #footer-bottom {
-    margin-top: 6.25rem;
-
-      article {
-        display: flex;
-        justify-content: space-between;
-
-        h6 {
-          color: #fff;
-          font-family: $font-family;
-          font-size: 20px;
-          font-weight: 400;
-          line-height: 30px; /* 150% */
-          letter-spacing: 0.5px;
-        }
-      }
-
-  }
-}
-// Footer End
