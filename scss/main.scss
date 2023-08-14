@@ -31,7 +31,9 @@ span {
 }
 
 
-//Mixin
+//Mixins Start
+
+// Custom Styles
 @mixin custom-style($color, $font-size, $font-weight, $line-height, $letter-spacing) {
   color: $color;
   font-size: $font-size;
@@ -41,6 +43,7 @@ span {
   font-family: $font-family;
 }
 
+// Button Styles
 @mixin btn-style($color, $bgcolor, $py, $px, $radius) {
   color: $color;
   background: $bgcolor;
@@ -48,6 +51,7 @@ span {
   border-radius: $radius;
 }
 
+// Flex Styles
 @mixin flex-style($display, $flex-direction, $justify-content, $align-items) {
 display: $display;
 flex-direction: $flex-direction;
@@ -55,45 +59,32 @@ justify-content: $justify-content;
 align-items: $align-items;
 }
 
-// Extends
-.px-140 {
-  padding-left: 8.75rem;
-  padding-right: 8.75rem;
+// Margin Styles
+@mixin margin-style($mt, $mb, $ml, $mr) {
+  margin-top: $mt + px;
+  margin-bottom: $mb + px;
+  margin-left: $ml + px;
+  margin-right: $mr + px;
 }
 
-.py-260 {
-  padding-top: 16.25rem;
-  padding-bottom: 16.25rem;
+// Padding Styles
+@mixin padding-style($pt, $pb, $pl, $pr) {
+  padding-top: $pt + px;
+  padding-bottom: $pb + px;
+  padding-left: $pl + px;
+  padding-right: $pr + px;
 }
 
-.my-130 {
-  margin-top: 130px;
-  margin-bottom: 130px;
-}
-
-// Extend Start
-// .nav-text {
-//   color: #FFF;
-//   text-align: right;
-//   font-family: $font-family;
-//   font-size: 16px;
-//   font-weight: 400;
-//   line-height: normal;
-//   letter-spacing: 0.4px;
-// }
-
-
-
-
+// Mixins End
 
 
 // Header Start
 header {
-  margin: 0 auto;
+  @include margin-style(0, 0, auto, auto);
+  @include padding-style(auto, auto, 140, 140);
+  @include flex-style(flex, row, space-between, center);
   height: 98px;
   background-color: #000;
-  @include flex-style(flex, row, space-between, center);
-  @extend .px-140;
 
   // .logo {}
 
@@ -143,10 +134,9 @@ header {
 // Header End
 
 
-
 // Hero Start
 .hero {
-  @extend .my-130;
+  @include margin-style(130, 130, auto, auto);
   @include flex-style(flex, auto, center, auto);
 
   .hero-left {
@@ -204,11 +194,11 @@ header {
         width: 100%;
         max-width: 24rem;
         height: 5rem;
-        @include btn-style(auto, #F5F5F5, auto, auto, 40px);
         border: none;
-        @include custom-style(#000, 20px, 400, 36px, auto);
         text-indent: 40px;
         opacity: 0.6225;
+        @include btn-style(auto, #F5F5F5, auto, auto, 40px);
+        @include custom-style(#000, 20px, 400, 36px, auto);
       }
         input:focus {
           background: #EDF860;
@@ -220,9 +210,9 @@ header {
         width: 216px;
         height: 80px;
         margin-left: .75rem;
+        border: none;
         @include custom-style(#FFF, 20px, 500, 36px, auto);
         @include btn-style(auto, #936EFE, auto, auto, 40px);
-        border: none;
       }
         button:hover {
           background: #EDF860;
@@ -262,15 +252,10 @@ header {
 
 // Everything Start
 .everything {
+  @include margin-style(0, 0, auto, auto);
+  @include padding-style(300, 88, auto, auto);
+  @include flex-style(flex, column, auto, auto);
   background: #F2F4F5;
-  padding-top: 300px;
-  padding-bottom: 88px;
-  // padding-left: 140px;
-  // padding-right: 140px;
-  // @extend .px-140;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
 
   h2 {
     text-align: center;
@@ -279,20 +264,16 @@ header {
 
   div {
     margin-top: 292px;
-    // @extend .px-140;
 
     article {
-      @extend .px-140;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      // padding-right: 2rem;
+      @include padding-style(auto, auto, 140, 140);
+      @include flex-style(flex, auto, center, center);
       column-gap: 8rem;
       row-gap: 16rem;
       margin-bottom: 248px;
   
       figure {
-        // padding-left: 2rem;
+
         img {
           width: 100%;
           max-width: 714px
@@ -369,14 +350,9 @@ header {
 // Everything End
 
 
-
-
-
 // Powerful Start
 .powerful {
-  padding-top: 16.25rem;
-  padding-bottom: 16.25rem;
-  @extend .px-140;
+  @include padding-style(260, 260, 140, 140);
 
   h2 {
     text-align: center;
@@ -389,12 +365,11 @@ header {
     column-gap: 24px;
 
     section {
+      @include padding-style(68, auto, 32, auto);
       width: 391px;
       height: 296px;
       border-radius: 20px;
       background: #F2F4F5;
-      padding-top: 4.25rem;
-      padding-left: 2rem;
 
       h4 {margin-top: 13px;
         @include custom-style(#000, 44px, 500, 0, -1.1px);
@@ -424,15 +399,11 @@ header {
 // Powerful End
 
 
-
-
 // Time Start
 .time {
-  margin: 0 auto;
+  @include margin-style(0, 0, auto, auto);
+  @include padding-style(260, 276, 140, 140);
   max-width: 1920px;
-  padding-top: 16.25rem;
-  padding-bottom: 17.25rem;
-  @extend .px-140;
   background: #100D10;
 
   h2 {
@@ -451,8 +422,8 @@ header {
   }
 
   .time-photos {
-    margin-top: 80px;
-    margin-bottom: 16.25rem;
+    @include margin-style(80, 260, auto, auto);
+    // @include padding-style(260, 260, 140, 140);
     @include flex-style(flex, auto, space-between, flex-start);
     column-gap: 28px;
 
@@ -476,8 +447,7 @@ header {
 
 // Business Start
 .business {
-  @extend .px-140;
-  @extend .py-260;
+  @include padding-style(260, 260, 140, 140);
   @include flex-style(flex, auto, space-between, center);
   // column-gap: 132px;
 
@@ -495,9 +465,9 @@ header {
     a {
       display: inline-flex;
       margin-top: 2.5rem;
+      text-align: right;
       @include custom-style(#fff, 18px, 700, auto, auto);
       @include btn-style(#fff, #936EFE, 19px, 51px, 100px);
-      text-align: right;
 
       &:hover {
         @include btn-style(#936EFE, #EDF860, 19px, 51px, 100px);
@@ -509,14 +479,13 @@ header {
   .business-cards {
 
     section {
-      padding-top: 2.25rem;
-      padding-left: 1.375rem;
+      @include padding-style(36, auto, 22, auto);
+      margin-bottom: 1.375rem;
+      display: flex;
       width: 500px;
       height: 180px;
       border-radius: 30px;
       background: #936EFE;
-      margin-bottom: 1.375rem;
-      display: flex;
 
       figure {
         margin-right: 1rem;
@@ -540,12 +509,7 @@ header {
 
       p {
         width: 374px;
-        color: #FFF;
-        font-family: $font-family;
-        font-size: 22px;
-        font-weight: 400;
-        line-height: 36px; /* 163.636% */
-        letter-spacing: -0.55px;
+        @include custom-style(#FFF, 22px, 400, 36px, -0.55px);
       }
     }
   }
@@ -553,12 +517,11 @@ header {
 // Business End
 
 
-
 // Plans Start
 .plan {
-  @extend .py-260;
-  background: #F2F4F5;
+  @include padding-style(260, 260, auto, auto);
 	@include flex-style(flex, column, auto, center);
+  background: #F2F4F5;
 
   h2 {
     text-align: center;
@@ -597,8 +560,7 @@ header {
 
       h5 {
 				@include custom-style(#000, 14px, 400, auto, -0.35px);
-        margin-top: 0.5rem;
-        margin-bottom: 2rem;
+        @include margin-style(8, 32, auto, auto);
       }
 
       .plan-card__info {
@@ -621,11 +583,10 @@ header {
         a {
           margin-top: 3.25rem;
           display: inline-flex;
-					@include btn-style(#000, #936EFE, 20px, 140px, 100px);
-					@include custom-style(auto, 16px, 700, 20px, 0.4px)
-          line-height: 20px; /* 125% */
           border: 1px solid #000;
           background: none;
+					@include custom-style(auto, 16px, 700, 20px, 0.4px);
+					@include btn-style(#000, #fff, 20px, 140px, 100px);
     
           &:hover {
             border: transparent;
@@ -656,3 +617,208 @@ header {
   }
 }
 // Plans End
+
+
+// Covered Start
+.covered {
+  @include padding-style(auto, 200, 140, 140);
+	@include flex-style(flex, auto, space-between, flex-start);
+  background: #F2F4F5;
+
+  .covered-info {
+    h2 {
+      width: 35.3125rem;
+      @include custom-style(#000, 72px, 700, 86px, auto);
+    }
+  
+    p {
+      width: 40rem;
+      margin-top: 1.125rem;
+      margin-bottom: 3.5rem;
+      @include custom-style(#000, 22px, 400, 36px, 0.33px);
+    }
+  
+    a {
+      margin-top: 2.5rem;
+      display: inline-flex;
+      text-align: right;
+      @include custom-style(#fff, 18px, 700, 0, auto);
+      @include btn-style(auto, #936EFE, 28px, 36px, 100px)
+  
+      &:hover {
+        background: #EDF860;
+        color: #936EFE;
+        outline: 3px dotted #936EFE;
+      }
+    }
+  }
+
+  $accordion-header-height: 40px;
+  $accordion-transition: 0.3s;
+
+  .accordion {
+    margin-left: 48px;
+    width: 842px;
+
+    .accordion-item {
+      margin-bottom: 1.625rem;
+      border-radius: 16px;
+      background: #FFF;
+      
+      .accordion-header {
+        cursor: pointer;
+        background-color: #fff;
+        border-radius: 16px;
+        height: $accordion-header-height;
+        @include padding-style(8, 8, 16, 16);
+        @include flex-style(flex, auto, space-between, center);
+        @include custom-style(#222, 16px, 500, auto, auto);
+        
+        &:hover {
+          color: #936EFE;
+          background-color: #EDF860;
+        }
+      }
+      
+      .accordion-content {
+        display: none;
+        padding: 10px;
+        border-top: 1px solid #ccc;
+      }
+      
+      &.active {
+        .accordion-content {
+          display: block;
+          animation: slideDown $accordion-transition ease-in-out;
+        }
+      }
+    }
+
+    .accordion-toggle {
+      margin-right: 10px;
+      font-weight: bold;
+    }
+    
+  }
+
+@keyframes slideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+}
+// Covered End
+
+
+// Footer Start
+.footer {
+  @include flex-style(flex, column, auto, auto);
+  @include padding-style(140, auto, 140, 140);
+  background: #936EFE;
+
+  .footer-top {
+    display: grid;
+    width: auto;
+    grid-template-areas: 
+    "info nav address";
+
+    .footer-basic {
+      grid-area: info;
+    }
+
+    .footer-table {
+      grid-area: nav;
+      display: grid;
+      width: auto;
+      grid-template-areas: 
+      "company help social address";
+      column-gap: 144px;
+    }
+
+    #address {
+      grid-area: address;
+      width: 10px;
+    }
+
+    .footer-nav {
+      display: flex;
+      column-gap: 144px;
+
+      ul {
+
+        h4 {
+          color: #FFF;
+          font-size: 24px;
+          font-weight: 700;
+          // line-height: 36px; /* 150% */
+        }
+
+        li {
+          height: 50px;
+
+          a {
+            color: #FFF;
+            font-size: 18px;
+            font-weight: 400;
+            // line-height: 62px; /* 344.444% */
+            letter-spacing: 0.45px;
+
+            &:hover {
+              color: #EDF860;
+            }
+          }
+        }
+      }
+
+      #address {
+
+        #map {
+          width: auto;
+          display: inline-flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+
+          p {
+            // display: inline;
+            // height: -100px
+          }
+          a {
+            // display: inline;
+          }
+        }
+
+        #contact {
+          // width: 10px !important;
+        }
+      }
+    }
+    h5 {
+      margin-top: 2.25rem;
+      width: 16.25rem;
+      @include custom-style(#E4E4E4, 20, 400, 28px, 0.5px);
+    }
+
+    a {
+      margin-top: .75rem;
+      display: inline-flex;
+      @include custom-style(#000, 18px, 700, 0, auto);
+      // @include btn-style(auto, #fff, 28px, 36px, 100px);
+      @include custom-style(#fff, 18px, 400, 62px, 0.45px);
+      // background: none;
+
+      &:hover {
+        color: #EDF860;
+        // background: #EDF860;
+        // outline: 3px dotted #fff;
+      }
+  }
+}
+}
+// Footer End
