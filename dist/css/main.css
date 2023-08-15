@@ -703,60 +703,93 @@ header {
     grid-template-areas: "info nav address"; }
     .footer .footer-top .footer-basic {
       grid-area: info; }
-    .footer .footer-top .footer-table {
+      .footer .footer-top .footer-basic h5 {
+        margin-top: 2.25rem;
+        width: 16.25rem;
+        color: #E4E4E4;
+        font-size: 20;
+        font-weight: 400;
+        line-height: 28px;
+        letter-spacing: 0.5px;
+        font-family: "Montserrat", sans-serif; }
+      .footer .footer-top .footer-basic a {
+        margin-top: .75rem;
+        display: inline-flex;
+        color: #000;
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 0;
+        letter-spacing: auto;
+        font-family: "Montserrat", sans-serif;
+        color: auto;
+        background: #fff;
+        padding: 28px 36px;
+        border-radius: 100px; }
+        .footer .footer-top .footer-basic a:hover {
+          color: #936EFE;
+          background: #EDF860;
+          outline: 3px dotted #EDF860; }
+    .footer .footer-top .footer-nav {
       grid-area: nav;
       display: grid;
       width: auto;
       grid-template-areas: "company help social address";
       column-gap: 144px; }
-    .footer .footer-top #address {
-      grid-area: address;
-      width: 10px; }
-    .footer .footer-top .footer-nav {
-      display: flex;
-      column-gap: 144px; }
       .footer .footer-top .footer-nav ul h4 {
-        color: #FFF;
+        color: #fff;
         font-size: 24px;
-        font-weight: 700; }
+        font-weight: 700;
+        line-height: auto;
+        letter-spacing: auto;
+        font-family: "Montserrat", sans-serif;
+        padding-bottom: 48px; }
       .footer .footer-top .footer-nav ul li {
+        padding-top: 16px;
         height: 50px; }
         .footer .footer-top .footer-nav ul li a {
-          color: #FFF;
+          color: #fff;
           font-size: 18px;
           font-weight: 400;
-          letter-spacing: 0.45px; }
+          line-height: auto;
+          letter-spacing: 0.45px;
+          font-family: "Montserrat", sans-serif; }
           .footer .footer-top .footer-nav ul li a:hover {
             color: #EDF860; }
-      .footer .footer-top .footer-nav #address #map {
-        width: auto;
-        display: inline-flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center; }
-    .footer .footer-top h5 {
-      margin-top: 2.25rem;
-      width: 16.25rem;
-      color: #E4E4E4;
-      font-size: 20;
-      font-weight: 400;
-      line-height: 28px;
-      letter-spacing: 0.5px;
-      font-family: "Montserrat", sans-serif; }
-    .footer .footer-top a {
-      margin-top: .75rem;
-      display: inline-flex;
-      color: #000;
-      font-size: 18px;
-      font-weight: 700;
-      line-height: 0;
-      letter-spacing: auto;
-      font-family: "Montserrat", sans-serif;
-      color: #fff;
-      font-size: 18px;
-      font-weight: 400;
-      line-height: 62px;
-      letter-spacing: 0.45px;
-      font-family: "Montserrat", sans-serif; }
-      .footer .footer-top a:hover {
-        color: #EDF860; }
+      .footer .footer-top .footer-nav #address {
+        grid-area: address;
+        width: 100%; }
+        .footer .footer-top .footer-nav #address #map {
+          margin-bottom: 60px;
+          width: 100%;
+          display: inline-flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: flex-start;
+          row-gap: 1rem; }
+          .footer .footer-top .footer-nav #address #map #pin {
+            color: #A3DC2F;
+            text-decoration: underline; }
+        .footer .footer-top .footer-nav #address #contact {
+          margin-top: 20px;
+          display: inline-flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: flex-start;
+          row-gap: 1rem; }
+  .footer #footer-bottom {
+    border-top: 1px solid #fff;
+    margin-top: 5.5rem; }
+    .footer #footer-bottom article {
+      padding-top: 32px;
+      padding-bottom: 32px;
+      padding-left: autopx;
+      padding-right: autopx;
+      display: flex;
+      justify-content: space-between; }
+      .footer #footer-bottom article h6 {
+        color: #fff;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 30px;
+        letter-spacing: 0.5px;
+        font-family: "Montserrat", sans-serif; }

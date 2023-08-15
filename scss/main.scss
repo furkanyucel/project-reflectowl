@@ -730,44 +730,49 @@ header {
 
     .footer-basic {
       grid-area: info;
+
+      h5 {
+        margin-top: 2.25rem;
+        width: 16.25rem;
+        @include custom-style(#E4E4E4, 20, 400, 28px, 0.5px);
+      }
+      
+      a {
+        margin-top: .75rem;
+        display: inline-flex;
+        @include custom-style(#000, 18px, 700, 0, auto);
+        @include btn-style(auto, #fff, 28px, 36px, 100px);
+  
+        &:hover {
+          color: #936EFE;
+          background: #EDF860;
+          outline: 3px dotted #EDF860;
+        }
+    }
     }
 
-    .footer-table {
+    .footer-nav {
       grid-area: nav;
       display: grid;
       width: auto;
       grid-template-areas: 
       "company help social address";
       column-gap: 144px;
-    }
 
-    #address {
-      grid-area: address;
-      width: 10px;
-    }
-
-    .footer-nav {
-      display: flex;
-      column-gap: 144px;
 
       ul {
 
         h4 {
-          color: #FFF;
-          font-size: 24px;
-          font-weight: 700;
-          // line-height: 36px; /* 150% */
+          @include custom-style(#fff, 24px, 700, auto, auto);
+          padding-bottom: 48px;
         }
 
         li {
+          padding-top: 16px;
           height: 50px;
 
           a {
-            color: #FFF;
-            font-size: 18px;
-            font-weight: 400;
-            // line-height: 62px; /* 344.444% */
-            letter-spacing: 0.45px;
+            @include custom-style(#fff, 18px, 400, auto, 0.45px);
 
             &:hover {
               color: #EDF860;
@@ -777,48 +782,44 @@ header {
       }
 
       #address {
+        grid-area: address;
+        width: 100%;
 
         #map {
-          width: auto;
-          display: inline-flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
+          margin-bottom: 60px;
+          width: 100%;
+          @include flex-style(inline-flex, column, center, flex-start);
+          row-gap: 1rem;
 
-          p {
-            // display: inline;
-            // height: -100px
-          }
-          a {
-            // display: inline;
+          #pin {
+            color: #A3DC2F;
+            text-decoration: underline;
           }
         }
 
         #contact {
-          // width: 10px !important;
+          margin-top: 20px;
+          @include flex-style(inline-flex, column, center, flex-start);
+          row-gap: 1rem;
         }
       }
     }
-    h5 {
-      margin-top: 2.25rem;
-      width: 16.25rem;
-      @include custom-style(#E4E4E4, 20, 400, 28px, 0.5px);
+}
+
+#footer-bottom {
+  border-top: 1px solid #fff;
+  margin-top: 5.5rem;
+
+    article {
+      @include padding-style(32, 32, auto, auto);
+      display: flex;
+      justify-content: space-between;
+
+      h6 {
+        @include custom-style(#fff, 12px, 400, 30px, 0.5px);
+      }
     }
 
-    a {
-      margin-top: .75rem;
-      display: inline-flex;
-      @include custom-style(#000, 18px, 700, 0, auto);
-      // @include btn-style(auto, #fff, 28px, 36px, 100px);
-      @include custom-style(#fff, 18px, 400, 62px, 0.45px);
-      // background: none;
-
-      &:hover {
-        color: #EDF860;
-        // background: #EDF860;
-        // outline: 3px dotted #fff;
-      }
-  }
 }
 }
 // Footer End
