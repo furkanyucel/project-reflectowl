@@ -171,7 +171,7 @@ header {
       margin-top: 2rem;
       width: 100%;
       max-width: 844px;
-      
+
       h1 {
         @include custom-style(#000, 100px, 700, 110px, auto);
       }
@@ -220,7 +220,7 @@ header {
 
     section {
       margin-top: 88px;
-      
+
       article {
         margin-right: 3.75rem;
 
@@ -269,7 +269,7 @@ header {
       column-gap: 8rem;
       row-gap: 16rem;
       margin-bottom: 248px;
-  
+
       figure {
 
         img {
@@ -277,27 +277,27 @@ header {
           max-width: 714px
         }
       }
-  
+
       section {
-  
+
         h2 {
           width: 845px;
           text-align: left;
           @include custom-style(#000, 72px, 700, 86px, -1.8px);
         }
-  
+
         p {
           width: 730px;
           margin-top: 1.75rem;
           @include custom-style(#000, 24px, 400, 36px, -0.6px);
         }
-  
+
         a {
           margin-top: 2.5rem;
           text-align: right;
           @include custom-style(#fff, 18px, 700, auto, auto);
           @include btn-style(#fff, #936EFE, 19px, 36px, 100px);
-    
+
           &:hover {
             @include btn-style(#936EFE, #EDF860, 19px, 36px, 100px);
            outline: 3px dotted #936EFE;
@@ -305,27 +305,27 @@ header {
         }
       }
     }
-  
+
     article {
       // margin-top: 248px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-  
+
       section {
         h2 {
           width: 647px;
         }
-        
+
         p {
           width: 540px;
         }
-  
+
         a {
           display: inline-flex;
           margin-top: 2.5rem;
           @include custom-style(#fff, 18px, 700, auto, auto);
-    
+
           &:hover {
             background: #EDF860;
             color: #936EFE;
@@ -333,9 +333,9 @@ header {
           }
         }
       }
-  
+
       figure {
-  
+
         img {
           width: 100%;
           max-width: 714px;
@@ -383,7 +383,7 @@ header {
         width: 248px;
         @include custom-style(#000, 18px, 400, 24px, 0);
       }
-      
+
       &:hover {
         background: #936EFE;
 
@@ -453,7 +453,7 @@ header {
     h2 {
       @include custom-style(#000, 72px, 700, 86px, -1.8px);
     }
-    
+
     p {
       margin-top: 18px;
       width: 630px;
@@ -572,7 +572,7 @@ header {
 
         p {
           margin-top: 1rem;
-					@include custom-style(#000, 16px, 400, 56px, 0.4px);    
+					@include custom-style(#000, 16px, 400, 56px, 0.4px);
         }
       }
 
@@ -585,7 +585,7 @@ header {
           background: none;
 					@include custom-style(auto, 16px, 700, 20px, 0.4px);
 					@include btn-style(#000, #fff, 20px, 140px, 100px);
-    
+
           &:hover {
             border: transparent;
             color: #936EFE;
@@ -600,7 +600,7 @@ header {
 
         h2, h3, h4, h5, h6, p {
           color: #FFF;
-        }   
+        }
           a {
             border: transparent;
             background: #fff;
@@ -628,21 +628,21 @@ header {
       width: 35.3125rem;
       @include custom-style(#000, 72px, 700, 86px, auto);
     }
-  
+
     p {
       width: 40rem;
       margin-top: 1.125rem;
       margin-bottom: 3.5rem;
       @include custom-style(#000, 22px, 400, 36px, 0.33px);
     }
-  
+
     a {
       margin-top: 2.5rem;
       display: inline-flex;
       text-align: right;
       @include custom-style(#fff, 18px, 700, 0, auto);
-      @include btn-style(auto, #936EFE, 28px, 36px, 100px)
-  
+      @include btn-style(auto, #936EFE, 28px, 36px, 100px);
+
       &:hover {
         background: #EDF860;
         color: #936EFE;
@@ -651,65 +651,51 @@ header {
     }
   }
 
-  $accordion-header-height: 40px;
-  $accordion-transition: 0.3s;
-
   .accordion {
-    margin-left: 48px;
-    width: 842px;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
 
     .accordion-item {
+      border: 1px solid #ddd;
       margin-bottom: 1.625rem;
       border-radius: 16px;
       background: #FFF;
-      
+
+
       .accordion-header {
         cursor: pointer;
         background-color: #fff;
         border-radius: 16px;
-        height: $accordion-header-height;
+        height: 2.5rem;
         @include padding-style(8, 8, 16, 16);
         @include flex-style(flex, auto, space-between, center);
         @include custom-style(#222, 16px, 500, auto, auto);
-        
-        &:hover {
-          color: #936EFE;
-          background-color: #EDF860;
-        }
-      }
       
+        &:hover {
+        color: #936EFE;
+        background-color: #EDF860;
+        }
+
+      }
+
       .accordion-content {
         display: none;
-        padding: 10px;
-        border-top: 1px solid #ccc;
-      }
-      
-      &.active {
-        .accordion-content {
-          display: block;
-          animation: slideDown $accordion-transition ease-in-out;
-        }
+        @include padding-style(22, 32, 24, 24);
+        @include custom-style(65676C, 20px, 400, 28px, 0.5px)
       }
     }
 
-    .accordion-toggle {
-      margin-right: 10px;
-      font-weight: bold;
+    .accordion-header::after {
+      content: "+";
+      float: right;
     }
-    
+
+  .accordion-item.active .accordion-header::after {
+    content: "-";
   }
 
-@keyframes slideDown {
-  0% {
-    opacity: 0;
-    transform: translateY(-10px);
   }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 }
 // Covered End
 
@@ -723,7 +709,7 @@ header {
   .footer-top {
     display: grid;
     width: auto;
-    grid-template-areas: 
+    grid-template-areas:
     "info nav address";
 
     .footer-basic {
@@ -734,13 +720,13 @@ header {
         width: 16.25rem;
         @include custom-style(#E4E4E4, 20, 400, 28px, 0.5px);
       }
-      
+
       a {
         margin-top: .75rem;
         display: inline-flex;
         @include custom-style(#000, 18px, 700, 0, auto);
         @include btn-style(auto, #fff, 28px, 36px, 100px);
-  
+
         &:hover {
           color: #936EFE;
           background: #EDF860;
@@ -753,7 +739,7 @@ header {
       grid-area: nav;
       display: grid;
       width: auto;
-      grid-template-areas: 
+      grid-template-areas:
       "company help social address";
       column-gap: 144px;
 
