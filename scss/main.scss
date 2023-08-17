@@ -1053,7 +1053,7 @@ $breakpoint-large: 992px;
 
 // Powerful Start
 .powerful {
-  @include padding-style(260, 260, 140, 140);
+  @include padding-style(120, 120, 32, 32);
 
   h2 {
     text-align: center;
@@ -1061,17 +1061,14 @@ $breakpoint-large: 992px;
   }
 
   .powerful-box {
-    margin-top: 5rem;
-    @include flex-style(flex, auto, center, auto);
-    flex-wrap: wrap;
-    column-gap: 24px;
+    margin-top: 48px;
+    @include flex-style(flex, column, center, auto);
+    gap: 12px;
 
     section {
       @include padding-style(68, 20, 32, auto);
-      width: 188px;
+      width: 280px;
       height: 167px;
-      border-radius: 20px;
-      background: #F2F4F5;
 
       h4 {
         @include custom-style(#000, 24px, 700, 0, -0.6px);
@@ -1084,22 +1081,376 @@ $breakpoint-large: 992px;
 
       p {
         margin-top: 16px;
-        width: 100%;
-        max-width: 248px;
         @include custom-style(#000, 12px, 400, 18px, 0);
-      }
-
-      &:hover {
-        background: #936EFE;
-
-        h4, h5, p {
-          color: #FFF;
-        }
       }
     }
   }
 }
 // Powerful End
+
+
+// Time Start
+.time {
+  @include margin-style(0, 0, auto, auto);
+  @include padding-style(120, 120, 32, 32);
+
+  h2 {
+    width: 100%;
+    @include custom-style(#FFF, 28px, 700, 36px, -0.75px);
+
+    &:last-of-type {
+      width: 372px;
+    }
+  }
+
+  p {
+    width: 100%;
+    margin-top: 18px;
+    @include custom-style(#FFF, 14px, 400, 18px, 0.21px);
+  }
+
+  .time-photos {
+    @include margin-style(64 , 120, auto, auto);
+    column-gap: 10px;
+
+    figure {
+
+      &:hover {
+        transform: translateY(-16px);
+      }
+    }
+
+  }
+}
+// Time End
+
+
+// Business Start
+.business {
+  @include padding-style(120, 100, 32, 32);
+  @include flex-style(flex, column, center, center);
+
+  .business-info {
+    h2 {
+      width: 288px;
+      @include custom-style(#000, 30px, 700, 40px, -0.75px);
+    }
+
+    p {
+      margin-top: 18px;
+      width: 320px;
+      @include custom-style(#000, 14px, 400, 22px, 0.21px);
+    }
+
+    a {
+      margin-top: 24px;
+      display: inline-flex;
+      text-align: right;
+      @include custom-style(#fff, 14px, 700, auto, auto);
+      @include btn-style(#fff, #936EFE, 16px, 24px, 100px);
+
+      &:hover {
+        @include btn-style(#936EFE, #EDF860, 16px, 24px, 100px);
+        outline: 3px dotted #936EFE;
+      }
+    }
+  }
+
+  .business-cards {
+    margin-top: 50px;
+
+    section {
+      @include padding-style(36, auto, 22, 22);
+      margin-bottom: 1.375rem;
+      display: flex;
+      width: 280px;
+      height: 180px;
+      border-radius: 30px;
+      background: #936EFE;
+
+      figure {
+        margin-right: 10px;
+
+        img {
+          width: 100%;
+        }
+
+      }
+      &:nth-of-type(1) {
+        margin-left: 0;
+      }
+
+      &:nth-of-type(2) {
+        margin-left: 0;
+        background: #EDF860;
+        p {
+          color: #000;
+        }
+      }
+
+      p {
+        width: 374px;
+        @include custom-style(#FFF, 14px, 400, 20px, -0.35px);
+      }
+    }
+  }
+}
+// Business End
+
+
+// Plans Start
+.plan {
+  @include padding-style(100, 80, 32, 32);
+	@include flex-style(flex, column, auto, center);
+  background: #F2F4F5;
+
+  h2 {
+    text-align: center;
+    margin-bottom: 52px;
+    width: 294px;
+		@include custom-style(#000, 30px, 700, 40px, auto);
+  }
+
+  .plans {
+		@include flex-style(flex, column, center, center);
+    row-gap: 1.5rem;
+
+    .plan-card {
+      width: 280px;
+			@include btn-style(auto, #FFF, 52px, 32px, 30px);
+
+      h4 {
+				@include custom-style(#000, 24px, 500, 30px, auto);
+        text-align: left;
+      }
+
+      h6 {
+        margin-top: 16px;
+        width: 280px;
+				@include custom-style(#000, 16px, 400, 20px, 0.3px);
+
+        &:last-of-type {
+          margin-top: 48px;
+        }
+      }
+
+      h3 {
+				@include custom-style(#000, 61px, 700, auto, -1.525px);
+        margin-top: -0.5rem;
+      }
+
+      h5 {
+				@include custom-style(#000, 16px, 400, auto, -0.35px);
+        @include margin-style(8, 32, auto, auto);
+      }
+
+      .plan-card__info {
+
+        p:before {
+          margin-right: .75rem;
+          content: "\f058";
+          font-family: FontAwesome;
+          color: #A3DC2F;
+        }
+
+        p {
+          margin-top: 1rem;
+					@include custom-style(#000, 16px, 400, 56px, 0.4px);
+        }
+      }
+
+      .btn-plan {
+
+        a {
+          @include margin-style(52, 0, auto, auto);
+          width: 180px;
+          display: inline-flex;
+          justify-content: center;
+          border: 1px solid #000;
+          background: none;
+					@include custom-style(auto, 16px, 700, 20px, 0.4px);
+					@include btn-style(#000, #fff, 14px, 50px, 100px);
+
+          &:hover {
+            border: transparent;
+            color: #936EFE;
+            background: #EDF860;
+          }
+        }
+      }
+
+      &:hover {
+        transform: translateY(0px);
+        background: #936EFE;
+
+        h2, h3, h4, h5, h6, p {
+          color: #FFF;
+        }
+          a {
+            border: transparent;
+            background: #fff;
+
+            &:hover {
+              border: #FFF;
+            }
+          }
+
+      }
+    }
+  }
+}
+// Plans End
+
+
+// Covered Start
+.covered {
+  @include padding-style(40, 80, 32, 32);
+	@include flex-style(flex, column, center, flex-start);
+  background: #F2F4F5;
+
+  .covered-info {
+    h2 {
+      width: 236px;
+      @include custom-style(#000, 30px, 700, 40px, auto);
+    }
+
+    p {
+      width: 356px;
+      margin-top: 1.125rem;
+      margin-bottom: 3.5rem;
+      @include custom-style(#000, 14px, 400, 22px, 0.21px);
+    }
+
+    a {
+      margin-top: 0;
+      margin-bottom: 50px;
+      display: inline-flex;
+      text-align: right;
+      @include custom-style(#fff, 18px, 700, 0, auto);
+      @include btn-style(auto, #936EFE, 28px, 36px, 100px);
+
+      &:hover {
+        background: #EDF860;
+        color: #936EFE;
+        outline: 3px dotted #936EFE;
+      }
+    }
+  }
+}
+// Covered End
+
+
+// Footer Start
+.footer {
+  @include flex-style(flex, column, auto, auto);
+  @include padding-style(80, auto, 32, 32);
+  background: #936EFE;
+
+  .footer-top {
+    display: grid;
+    width: auto;
+    grid-template-areas:
+    "info"
+    "nav"
+    "address";
+
+    .footer-basic {
+      grid-area: info;
+
+      h5 {
+        margin-top: 14px;
+        width: 300px;
+        @include custom-style(#E4E4E4, 20, 400, 28px, 0.5px);
+      }
+
+      a {
+        margin-top: 24px;
+        display: inline-flex;
+        @include custom-style(#000, 18px, 700, 0, auto);
+        @include btn-style(auto, #fff, 28px, 36px, 100px);
+
+        &:hover {
+          color: #936EFE;
+          background: #EDF860;
+          outline: 3px dotted #EDF860;
+        }
+    }
+    }
+
+    .footer-nav {
+      margin-top: 48px;
+      grid-area: nav;
+      display: grid;
+      width: auto;
+      grid-template-areas:
+      "company"
+      "help"
+      "social"
+      "address";
+      row-gap: 48px;
+
+
+      ul {
+
+        h4 {
+          @include custom-style(#fff, 24px, 700, auto, auto);
+          padding-bottom: 16px;
+        }
+
+        li {
+          padding-top: 16px;
+          height: 32px;
+
+          a {
+            @include custom-style(#fff, 18px, 400, auto, 0.45px);
+
+            &:hover {
+              color: #EDF860;
+            }
+          }
+        }
+      }
+
+      #address {
+        grid-area: address;
+        width: 100%;
+
+        #map {
+          margin-bottom: 60px;
+          width: 100%;
+          @include flex-style(inline-flex, column, center, flex-start);
+          row-gap: 1rem;
+
+          #pin {
+            color: #A3DC2F;
+            text-decoration: underline;
+          }
+        }
+
+        #contact {
+          margin-top: 20px;
+          @include flex-style(inline-flex, column, center, flex-start);
+          row-gap: 1rem;
+        }
+      }
+    }
+}
+
+#footer-bottom {
+
+    article {
+      @include padding-style(32, 32, auto, auto);
+      flex-direction: column;
+      justify-content: flex-start;
+
+      h6 {
+        @include custom-style(#fff, 9px, 400, 30px, 0.5px);
+      }
+    }
+
+}
+}
+// Footer End
 
 }
 
