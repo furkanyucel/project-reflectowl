@@ -33,6 +33,9 @@ header {
   align-items: center;
   height: 98px;
   background-color: #000; }
+  header .fa-bars,
+  header .fa-xmark {
+    display: none; }
   header nav ul {
     list-style: none;
     display: flex; }
@@ -86,47 +89,54 @@ header {
     flex-direction: column;
     justify-content: auto;
     align-items: auto; }
-    .hero .hero-left section {
+    .hero .hero-left .top {
       display: flex;
-      flex-direction: auto;
+      flex-direction: row !important;
       justify-content: flex-start;
-      align-items: flex-end; }
-      .hero .hero-left section i {
+      align-items: center; }
+      .hero .hero-left .top i {
         margin-right: 1rem;
         color: #EDF860;
         background: #936EFE;
         padding: 21px 21px;
         border-radius: 100px; }
-      .hero .hero-left section article div p {
-        color: #000;
-        font-size: 24px;
-        font-weight: 500;
-        line-height: 30px;
-        letter-spacing: auto;
-        font-family: "Montserrat", sans-serif; }
-      .hero .hero-left section article div h5 {
-        color: #000;
-        font-size: 14px;
-        font-weight: 400;
-        line-height: 24px;
-        letter-spacing: auto;
-        font-family: "Montserrat", sans-serif; }
-        .hero .hero-left section article div h5 u {
-          text-decoration-line: underline; }
-    .hero .hero-left section {
+      .hero .hero-left .top article {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start; }
+        .hero .hero-left .top article div p {
+          color: #000;
+          font-size: 24px;
+          font-weight: 500;
+          line-height: 30px;
+          letter-spacing: auto;
+          font-family: "Montserrat", sans-serif; }
+        .hero .hero-left .top article div h5 {
+          color: #000;
+          font-size: 14px;
+          font-weight: 400;
+          line-height: 24px;
+          letter-spacing: auto;
+          font-family: "Montserrat", sans-serif; }
+          .hero .hero-left .top article div h5 u {
+            text-decoration-line: underline; }
+    .hero .hero-left .main {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
       margin-top: 2rem;
       width: 100%;
       max-width: 844px; }
-      .hero .hero-left section h1 {
+      .hero .hero-left .main h1 {
         color: #000;
         font-size: 100px;
         font-weight: 700;
         line-height: 110px;
         letter-spacing: auto;
         font-family: "Montserrat", sans-serif; }
-    .hero .hero-left section {
-      margin-top: 3rem; }
-      .hero .hero-left section p {
+      .hero .hero-left .main p {
+        margin-top: 3rem;
         width: 100%;
         max-width: 650px;
         color: #000;
@@ -135,64 +145,69 @@ header {
         line-height: 36px;
         letter-spacing: auto;
         font-family: "Montserrat", sans-serif; }
-    .hero .hero-left section input {
-      width: 100%;
-      max-width: 24rem;
-      height: 5rem;
-      border: none;
-      text-indent: 40px;
-      opacity: 0.6225;
-      color: auto;
-      background: #F5F5F5;
-      padding: auto auto;
-      border-radius: 40px;
-      color: #000;
-      font-size: 20px;
-      font-weight: 400;
-      line-height: 36px;
-      letter-spacing: auto;
-      font-family: "Montserrat", sans-serif; }
-    .hero .hero-left section input:focus {
-      background: #EDF860;
-      color: #936EFE;
-      outline: none; }
-    .hero .hero-left section button {
-      width: 216px;
-      height: 80px;
-      margin-left: .75rem;
-      border: none;
-      color: #FFF;
-      font-size: 20px;
-      font-weight: 500;
-      line-height: 36px;
-      letter-spacing: auto;
-      font-family: "Montserrat", sans-serif;
-      color: auto;
-      background: #936EFE;
-      padding: auto auto;
-      border-radius: 40px; }
-    .hero .hero-left section button:hover {
-      background: #EDF860;
-      color: #936EFE; }
-    .hero .hero-left section {
-      margin-top: 88px; }
-      .hero .hero-left section article {
-        margin-right: 3.75rem; }
-        .hero .hero-left section article h2 {
+      .hero .hero-left .main .subs {
+        margin-top: 2.25rem;
+        width: 100%;
+        display: flex; }
+        .hero .hero-left .main .subs input {
+          width: 100%;
+          max-width: 28.5rem;
+          height: 5rem;
+          border: none;
+          text-indent: 40px;
+          opacity: 0.6225;
+          color: auto;
+          background: #F5F5F5;
+          padding: auto auto;
+          border-radius: 40px;
           color: #000;
-          font-size: 56px;
-          font-weight: 500;
-          line-height: 0;
-          letter-spacing: auto;
-          font-family: "Montserrat", sans-serif; }
-        .hero .hero-left section article p {
-          margin-top: 3rem;
-          color: #B1B1B1;
-          font-size: 22px;
+          font-size: 20px;
           font-weight: 400;
-          line-height: 0;
+          line-height: 36px;
           letter-spacing: auto;
           font-family: "Montserrat", sans-serif; }
+        .hero .hero-left .main .subs input:focus {
+          background: #EDF860;
+          color: #936EFE;
+          outline: none; }
+        .hero .hero-left .main .subs button {
+          width: 216px;
+          height: 80px;
+          margin-left: .75rem;
+          border: none;
+          color: #FFF;
+          font-size: 20px;
+          font-weight: 500;
+          line-height: 36px;
+          letter-spacing: auto;
+          font-family: "Montserrat", sans-serif;
+          color: auto;
+          background: #936EFE;
+          padding: auto auto;
+          border-radius: 40px; }
+        .hero .hero-left .main .subs button:hover {
+          background: #EDF860;
+          color: #936EFE; }
+      .hero .hero-left .main .statistics {
+        margin-top: 100px;
+        display: flex; }
+        .hero .hero-left .main .statistics article {
+          margin-right: 3.75rem; }
+          .hero .hero-left .main .statistics article h2 {
+            color: #000;
+            font-size: 56px;
+            font-weight: 500;
+            line-height: 0;
+            letter-spacing: auto;
+            font-family: "Montserrat", sans-serif; }
+          .hero .hero-left .main .statistics article p {
+            margin-top: 3rem;
+            color: #B1B1B1;
+            font-size: 22px;
+            font-weight: 400;
+            line-height: 0;
+            letter-spacing: auto;
+            font-family: "Montserrat", sans-serif; }
   .hero .hero-right figure img {
     width: 100%;
     max-width: 754px; }
@@ -794,3 +809,264 @@ header {
         line-height: 30px;
         letter-spacing: 0.5px;
         font-family: "Montserrat", sans-serif; }
+
+@media (max-width: 576px) {
+  header {
+    height: 650px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 24px;
+    padding-right: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; }
+    header figure {
+      margin-bottom: 3rem; }
+    header nav ul {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      row-gap: 2rem;
+      text-align: center; }
+      header nav ul li {
+        margin-right: 0; }
+    header .login-signup {
+      margin-top: 4rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      row-gap: 2rem; }
+      header .login-signup a {
+        margin-left: 0 !important; }
+      header .login-signup a:last-child {
+        display: flex;
+        margin-left: 0; }
+  .hero {
+    margin-top: 64px;
+    margin-bottom: 64px;
+    margin-left: 32px;
+    margin-right: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; }
+    .hero .hero-left .top {
+      align-items: flex-end; }
+    .hero .hero-left .main {
+      margin-top: 2rem;
+      width: 100%;
+      max-width: 844px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: auto; }
+      .hero .hero-left .main h1 {
+        font-size: 38px;
+        line-height: 44px; }
+      .hero .hero-left .main p {
+        margin-top: 3rem;
+        width: 100%;
+        color: #000;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 24px;
+        letter-spacing: -0.6px;
+        font-family: "Montserrat", sans-serif; }
+      .hero .hero-left .main .subs {
+        flex-direction: column; }
+        .hero .hero-left .main .subs input {
+          height: 64px;
+          border: none; }
+        .hero .hero-left .main .subs button {
+          margin-top: 16px;
+          width: 100%;
+          height: 64px;
+          margin-left: 0; }
+      .hero .hero-left .main .statistics {
+        margin-top: 100px;
+        display: flex; }
+        .hero .hero-left .main .statistics article {
+          margin-right: 3.75rem; }
+          .hero .hero-left .main .statistics article h2 {
+            color: #000;
+            font-size: 36px;
+            font-weight: 700;
+            line-height: 0;
+            letter-spacing: auto;
+            font-family: "Montserrat", sans-serif; }
+          .hero .hero-left .main .statistics article p {
+            margin-top: 3rem;
+            color: #B1B1B1;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 0;
+            letter-spacing: auto;
+            font-family: "Montserrat", sans-serif; }
+    .hero .hero-right figure {
+      margin-top: 58px; }
+      .hero .hero-right figure img {
+        width: 100%;
+        max-width: 754px; }
+  .everything {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: autopx;
+    margin-right: autopx;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: autopx;
+    padding-right: autopx;
+    display: flex;
+    flex-direction: column;
+    justify-content: auto;
+    align-items: auto;
+    background: #F2F4F5; }
+    .everything h2 {
+      text-align: center;
+      color: #000;
+      font-size: 30px;
+      font-weight: 700;
+      line-height: 40px;
+      letter-spacing: -0.75px;
+      font-family: "Montserrat", sans-serif; }
+    .everything div {
+      margin-top: 120px; }
+      .everything div article {
+        padding-top: autopx;
+        padding-bottom: autopx;
+        padding-left: 32px;
+        padding-right: 32px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center; }
+        .everything div article figure {
+          display: flex; }
+          .everything div article figure img {
+            width: 100%;
+            max-width: 576px; }
+        .everything div article section h2 {
+          margin-top: -180px;
+          width: 352px;
+          text-align: left;
+          color: #000;
+          font-size: 36px;
+          font-weight: 700;
+          line-height: 40px;
+          letter-spacing: -0.75px;
+          font-family: "Montserrat", sans-serif; }
+        .everything div article section p {
+          width: 100%;
+          margin-top: 1.125rem;
+          color: #000;
+          font-size: 14px;
+          font-weight: 400;
+          line-height: 22px;
+          letter-spacing: -0.35px;
+          font-family: "Montserrat", sans-serif; }
+        .everything div article section a {
+          margin-top: 1.75rem;
+          text-align: right;
+          color: #fff;
+          font-size: 14px;
+          font-weight: 700;
+          line-height: 16px;
+          letter-spacing: auto;
+          font-family: "Montserrat", sans-serif;
+          color: #fff;
+          background: #936EFE;
+          padding: 19px 36px;
+          border-radius: 100px; }
+          .everything div article section a:hover {
+            color: #936EFE;
+            background: #EDF860;
+            padding: 19px 36px;
+            border-radius: 100px;
+            outline: 3px dotted #936EFE; }
+      .everything div article {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center; }
+        .everything div article section h2 {
+          width: 100%; }
+        .everything div article section p {
+          width: 100%; }
+        .everything div article section a {
+          display: inline-flex;
+          margin-top: 2.5rem;
+          color: #fff;
+          font-size: 18px;
+          font-weight: 700;
+          line-height: auto;
+          letter-spacing: auto;
+          font-family: "Montserrat", sans-serif; }
+          .everything div article section a:hover {
+            background: #EDF860;
+            color: #936EFE;
+            outline: 3px dotted #936EFE; }
+        .everything div article figure {
+          margin-top: -100px;
+          order: -1; }
+  .powerful {
+    padding-top: 260px;
+    padding-bottom: 260px;
+    padding-left: 140px;
+    padding-right: 140px; }
+    .powerful h2 {
+      text-align: center;
+      color: #000;
+      font-size: 30px;
+      font-weight: 700;
+      line-height: 40px;
+      letter-spacing: -0.75px;
+      font-family: "Montserrat", sans-serif; }
+    .powerful .powerful-box {
+      margin-top: 5rem;
+      display: flex;
+      flex-direction: auto;
+      justify-content: center;
+      align-items: auto;
+      flex-wrap: wrap;
+      column-gap: 24px; }
+      .powerful .powerful-box section {
+        padding-top: 68px;
+        padding-bottom: 20px;
+        padding-left: 32px;
+        padding-right: autopx;
+        width: 188px;
+        height: 167px;
+        border-radius: 20px;
+        background: #F2F4F5; }
+        .powerful .powerful-box section h4 {
+          color: #000;
+          font-size: 24px;
+          font-weight: 700;
+          line-height: 0;
+          letter-spacing: -0.6px;
+          font-family: "Montserrat", sans-serif; }
+        .powerful .powerful-box section h5 {
+          margin-top: 24px;
+          color: #000;
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 14px;
+          letter-spacing: -0.4px;
+          font-family: "Montserrat", sans-serif; }
+        .powerful .powerful-box section p {
+          margin-top: 16px;
+          width: 100%;
+          max-width: 248px;
+          color: #000;
+          font-size: 12px;
+          font-weight: 400;
+          line-height: 18px;
+          letter-spacing: 0;
+          font-family: "Montserrat", sans-serif; }
+        .powerful .powerful-box section:hover {
+          background: #936EFE; }
+          .powerful .powerful-box section:hover h4, .powerful .powerful-box section:hover h5, .powerful .powerful-box section:hover p {
+            color: #FFF; } }
