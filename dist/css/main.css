@@ -1,4 +1,30 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+.scroll-top-button {
+  position: fixed;
+  right: 20px;
+  bottom: 36px;
+  display: grid;
+  place-items: center;
+  width: 64px;
+  height: 64px;
+  border: 0;
+  border-radius: 50%;
+  background: #333;
+  color: #fff;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s; }
+  .scroll-top-button:hover {
+    background: green; }
+
+.scroll-top-button.visible {
+  opacity: 1;
+  visibility: visible; }
+
+.fa-circle-up {
+  color: #fff; }
+
 * {
   margin: 0;
   padding: 0;
@@ -33,9 +59,6 @@ header {
   align-items: center;
   height: 98px;
   background-color: #000; }
-  header .fa-bars,
-  header .fa-xmark {
-    display: none; }
   header nav ul {
     list-style: none;
     display: flex; }
@@ -81,7 +104,7 @@ header {
   margin-left: autopx;
   margin-right: autopx;
   display: flex;
-  flex-direction: auto;
+  flex-direction: row;
   justify-content: center;
   align-items: auto; }
   .hero .hero-left {
@@ -124,6 +147,7 @@ header {
     .hero .hero-left .main {
       display: flex;
       flex-direction: column;
+      justify-content: auto;
       align-items: flex-start;
       margin-top: 2rem;
       width: 100%;
@@ -290,8 +314,9 @@ header {
           outline: 3px dotted #936EFE; }
     .everything div article {
       display: flex;
-      align-items: center;
-      justify-content: space-between; }
+      flex-direction: auto;
+      justify-content: space-between;
+      align-items: center; }
       .everything div article section h2 {
         width: 647px; }
       .everything div article section p {
@@ -810,7 +835,36 @@ header {
         letter-spacing: 0.5px;
         font-family: "Montserrat", sans-serif; }
 
-@media (max-width: 576px) {
+@media (min-width: 1200px) {
+  .hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: auto; } }
+
+@media (min-width: 1199px) {
+  .hero {
+    padding-top: autopx;
+    padding-bottom: autopx;
+    padding-left: 140px;
+    padding-right: 140px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: auto; }
+    .hero .hero-left .main h1 {
+      width: 800px;
+      color: #000;
+      font-size: 64px;
+      font-weight: 700;
+      line-height: 70px;
+      letter-spacing: auto;
+      font-family: "Montserrat", sans-serif; }
+    .hero .hero-right figure img {
+      width: 100%;
+      max-width: 754px; } }
+
+@media (max-width: 404px) {
   header {
     height: 650px;
     padding-top: 0px;
@@ -915,7 +969,7 @@ header {
     margin-bottom: 0px;
     margin-left: autopx;
     margin-right: autopx;
-    padding-top: 0px;
+    padding-top: 120px;
     padding-bottom: 0px;
     padding-left: autopx;
     padding-right: autopx;
@@ -925,6 +979,7 @@ header {
     align-items: auto;
     background: #F2F4F5; }
     .everything h2 {
+      margin-bottom: 120px;
       text-align: center;
       color: #000;
       font-size: 30px;

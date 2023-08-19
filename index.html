@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+      
     <!-- Jquery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     
@@ -448,7 +448,25 @@
     </footer>
     <!-- Footer End -->
 
+
+    <!--- Scroll Top Button Start  --->
+    <button
+    id="scroll-top-button"
+    onclick="scrollToTop()"
+    class="scroll-top-button"
+    type="button"
+    >
+    <span class="material-symbols-outlined">
+      <!-- <i class="bi bi-arrow-up-short"></i> -->
+      <i class="fa-solid fa-circle-up fa-2xl"></i>
+    </span>
+    </button>
+    <!---  Scroll Top Button End   --->
+
+
     <!-- Javascript Codes -->
+
+    <!-- AOS JS Codes -->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
       AOS.init({
@@ -456,6 +474,11 @@
         duration: 900,
       });
     </script>
+
+    <!-- Scroll Top Button JS Code -->
+    <script src=".//dist/js/scroll-top-button.js"></script>
+
+    <!-- Accordion Menu JS Code -->
     <script>
       $(document).ready(function() {
         $(".accordion-header").click(function() {

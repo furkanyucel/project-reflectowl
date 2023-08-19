@@ -1,3 +1,5 @@
+@import 'scroll-top-button';
+
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 $font-family: 'Montserrat', sans-serif;
@@ -8,7 +10,6 @@ $font-family: 'Montserrat', sans-serif;
   padding: 0;
   box-sizing:content-box;
 }
-
 
 ::selection {
   color: #EDF860;
@@ -84,11 +85,6 @@ header {
   height: 98px;
   background-color: #000;
 
-  .fa-bars,
-  .fa-xmark {
-    display: none;
-  }
-
   // .logo {}
 
   nav {
@@ -140,7 +136,7 @@ header {
 // Hero Start
 .hero {
   @include margin-style(130, 130, auto, auto);
-  @include flex-style(flex, auto, center, auto);
+  @include flex-style(flex, row, center, auto);
 
   .hero-left {
     @include flex-style(flex, column, auto, auto);
@@ -175,9 +171,7 @@ header {
     }
 
     .main {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
+      @include flex-style(flex, column, auto, flex-start);
       margin-top: 2rem;
       width: 100%;
       max-width: 844px;
@@ -246,8 +240,6 @@ header {
         }
       }
     }
-
-    // section {}
 
 
 
@@ -326,9 +318,7 @@ header {
 
     article {
       // margin-top: 248px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      @include flex-style(flex, auto, space-between, center);
 
       section {
         h2 {
@@ -832,12 +822,67 @@ header {
 
 
 // Breakpoint Start
+$xsMobile: 404px;
+$mobile: 767px;
+$tablet: 991px;
+$smallDesktop: 1199px;
+$largeDesktop: 1200px;
 
-$breakpoint-small: 576px;
-$breakpoint-medium: 768px;
-$breakpoint-large: 992px;
 
-@media (max-width: $breakpoint-small) {
+// Large Desktop Screen Start
+@media (min-width: $largeDesktop) {
+  .hero {
+    @include flex-style(flex, column, center, auto);
+  }
+}
+// Large Desktop Screen End
+
+
+// Small Desktop Screen Start
+@media (min-width: $smallDesktop) {
+  .hero {
+    // width: calc(100% - 280px);
+    @include padding-style(auto, auto, 140, 140);
+    @include flex-style(flex, row, center, auto);
+
+
+    .hero-left {
+
+      .main {
+        
+        h1 {
+          width: 800px;
+          @include custom-style(#000, 64px, 700, 70px, auto);
+        }
+      }
+    }
+
+    .hero-right {
+
+      figure {
+        img {
+          width: 100%;
+          max-width: 754px;
+        }
+      }
+    }
+  }
+}
+// Small Desktop Screen Start
+
+
+// Tablet Screen Start
+@media (min-width: $tablet) {}
+// Tablet Screen End
+
+
+// Mobile Screen Start
+@media (min-width: $mobile) {}
+// Mobile Screen End
+
+
+//XS Mobile Screen Start
+@media (max-width: $xsMobile) {
   header {
     height: 650px;
     @include padding-style(0, 0, 24, 24);
@@ -961,11 +1006,12 @@ $breakpoint-large: 992px;
 // Everything Start
 .everything {
   @include margin-style(0, 0, auto, auto);
-  @include padding-style(0, 0, auto, auto);
+  @include padding-style(120, 0, auto, auto);
   @include flex-style(flex, column, auto, auto);
   background: #F2F4F5;
 
   h2 {
+    margin-bottom: 120px;
     text-align: center;
     @include custom-style(#000, 30px, 700, 40px, -0.75px);
   }
@@ -1201,33 +1247,33 @@ $breakpoint-large: 992px;
 // Plans Start
 .plan {
   @include padding-style(100, 80, 32, 32);
-	@include flex-style(flex, column, auto, center);
+  @include flex-style(flex, column, auto, center);
   background: #F2F4F5;
 
   h2 {
     text-align: center;
     margin-bottom: 52px;
     width: 294px;
-		@include custom-style(#000, 30px, 700, 40px, auto);
+    @include custom-style(#000, 30px, 700, 40px, auto);
   }
 
   .plans {
-		@include flex-style(flex, column, center, center);
+    @include flex-style(flex, column, center, center);
     row-gap: 1.5rem;
 
     .plan-card {
       width: 280px;
-			@include btn-style(auto, #FFF, 52px, 32px, 30px);
+      @include btn-style(auto, #FFF, 52px, 32px, 30px);
 
       h4 {
-				@include custom-style(#000, 24px, 500, 30px, auto);
+        @include custom-style(#000, 24px, 500, 30px, auto);
         text-align: left;
       }
 
       h6 {
         margin-top: 16px;
         width: 280px;
-				@include custom-style(#000, 16px, 400, 20px, 0.3px);
+        @include custom-style(#000, 16px, 400, 20px, 0.3px);
 
         &:last-of-type {
           margin-top: 48px;
@@ -1235,12 +1281,12 @@ $breakpoint-large: 992px;
       }
 
       h3 {
-				@include custom-style(#000, 61px, 700, auto, -1.525px);
+        @include custom-style(#000, 61px, 700, auto, -1.525px);
         margin-top: -0.5rem;
       }
 
       h5 {
-				@include custom-style(#000, 16px, 400, auto, -0.35px);
+        @include custom-style(#000, 16px, 400, auto, -0.35px);
         @include margin-style(8, 32, auto, auto);
       }
 
@@ -1255,7 +1301,7 @@ $breakpoint-large: 992px;
 
         p {
           margin-top: 1rem;
-					@include custom-style(#000, 16px, 400, 56px, 0.4px);
+          @include custom-style(#000, 16px, 400, 56px, 0.4px);
         }
       }
 
@@ -1268,8 +1314,8 @@ $breakpoint-large: 992px;
           justify-content: center;
           border: 1px solid #000;
           background: none;
-					@include custom-style(auto, 16px, 700, 20px, 0.4px);
-					@include btn-style(#000, #fff, 14px, 50px, 100px);
+          @include custom-style(auto, 16px, 700, 20px, 0.4px);
+          @include btn-style(#000, #fff, 14px, 50px, 100px);
 
           &:hover {
             border: transparent;
@@ -1305,7 +1351,7 @@ $breakpoint-large: 992px;
 // Covered Start
 .covered {
   @include padding-style(40, 80, 32, 32);
-	@include flex-style(flex, column, center, flex-start);
+  @include flex-style(flex, column, center, flex-start);
   background: #F2F4F5;
 
   .covered-info {
@@ -1451,13 +1497,21 @@ $breakpoint-large: 992px;
 }
 }
 // Footer End
-
 }
-
-@media (min-width: $breakpoint-medium) and (max-width: $breakpoint-large) {
-  // .header {}
+//XS Mobile Screen End
 
 
-}
+
 
 // Breakpoint End
+
+
+
+
+
+// $breakpoint-small: 576px;
+// $breakpoint-medium: 768px;
+// $breakpoint-large: 992px;
+
+
+// @media (min-width: $breakpoint-medium) and (max-width: $breakpoint-large) {}
