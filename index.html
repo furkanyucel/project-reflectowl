@@ -4,39 +4,22 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Jquery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+    <!-- Css -->
     <link rel="stylesheet" href="dist/css/main.css" />
+
+    <!-- Font Awesome -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
     />
+
+        <!-- Aos -->
+        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <title>Landing Page - Reflectowl</title>
-    <style>
-      /* mobil hamburger menu */
-header navbar .hamburger-btn {
-  display: none;
-  cursor: pointer;
-}
-
-header navbar .hamburger-btn .bi-list {
-  display: none;
-  width: 32px;
-  height: 32px;
-  background: var(--light);
-  border-radius: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-header navbar .hamburger-btn:hover .bi-list {
-  background: var(--success);
-  color: var(--light);
-}
-
-header .navbar-mobil {
-  display: none;
-}
-    </style>
   </head>
   <body>
     <!-- Header Start -->
@@ -104,20 +87,12 @@ header .navbar-mobil {
             </article>
           </section>
 
-
         </section>
-
-        <!-- <section>
-
-        </section> -->
-
-
-
 
       </article>
 
       <article class="hero-right">
-        <figure>
+        <figure data-aos="fade-up">
           <img src="..//dist/img/hero-img.png" alt="Hero Image" />
         </figure>
       </article>
@@ -130,7 +105,7 @@ header .navbar-mobil {
 
       <div>
         <article>
-          <figure>
+          <figure data-aos="fade-up">
             <img
               src=".//dist/img/monthly-spending.png"
               alt="Monthly Spending Image"
@@ -474,6 +449,13 @@ header .navbar-mobil {
     <!-- Footer End -->
 
     <!-- Javascript Codes -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        offset: 300,
+        duration: 900,
+      });
+    </script>
     <script>
       $(document).ready(function() {
         $(".accordion-header").click(function() {
